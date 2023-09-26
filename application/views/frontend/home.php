@@ -129,9 +129,9 @@
                 <div class="about-one__content">
                     <div class="block-title text-left">
                         <p class="color-2"><span>Advantages of our service?</span></p>
-                        <h3>What do you get at SANDEMO.ID? <br> <span>Lots of Free!</span></h3>
+                        <h3>What do you get at SANDEMO ID? <br> <span>Lots of Free!</span></h3>
                     </div><!-- /.block-title text-center -->
-                    <p>Cheap website creation services with the best quality are not impossible, SANDEMO.ID is the proof! Get the best features from Sandemo Website Development Services to support your business success!</p>
+                    <p>Cheap website creation services with the best quality are not impossible, SANDEMO ID is the proof! Get the best features from Sandemo Website Development Services to support your business success!</p>
                     <div class="about-one__box-wrapper">
                         <div class="about-one__box">
                             <div class="about-one__box-icon">
