@@ -11,6 +11,11 @@
     <div class="section__bubble-7"></div><!-- /.section__bubble-7 -->
     <div class="section__bubble-8"></div><!-- /.section__bubble-8 -->
     <div class="container">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3971040661867794" crossorigin="anonymous"></script>
+        <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-3971040661867794" data-ad-slot="9577430246"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
         <div class="row">
             <div class="col-lg-8">
                 <div class="blog-details__main">
@@ -66,6 +71,12 @@
                     </div><!-- /.sidebar__single -->
                     <div class="sidebar__single sidebar__category">
                         <h3 class="sidebar__title">Categories</h3>
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3971040661867794" crossorigin="anonymous"></script>
+                        <!-- Display BLog -->
+                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3971040661867794" data-ad-slot="2634432157" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
                         <ul class="list-unstyled sidebar__category-list">
                             <?php foreach ($category as $key) : ?>
                                 <li>
