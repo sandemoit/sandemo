@@ -14,12 +14,12 @@ header('Content-type: application/xml; charset="ISO-8859-1"', true);
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://sandemoindoteknologi.co.id/layanan/service</loc>
+        <loc>https://sandemoindoteknologi.co.id/service</loc>
         <lastmod>2023-06-02T03:43:40+00:00</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://sandemoindoteknologi.co.id/layanan/packetappweb</loc>
+        <loc>https://sandemoindoteknologi.co.id/packetappweb</loc>
         <lastmod>2023-06-02T03:43:40+00:00</lastmod>
         <priority>0.80</priority>
     </url>
