@@ -1,8 +1,8 @@
 <section class="mailchimp-one">
     <div class="container">
         <div class="inner-container">
-            <img src="<?= base_url('assets/frontend') ?>/images/mocups/subscribe-moc-1-1.png" class="mailchimp-one__moc-1" alt="">
-            <img src="<?= base_url('assets/frontend') ?>/images/mocups/subscribe-moc-1-2.png" class="mailchimp-one__moc-2" alt="">
+            <img src="<?= base_url('assets/frontend') ?>/images/mocups/subscribe-moc-1-1.webp" class="mailchimp-one__moc-1" alt="">
+            <img src="<?= base_url('assets/frontend') ?>/images/mocups/subscribe-moc-1-2.webp" class="mailchimp-one__moc-2" alt="">
             <img src="<?= base_url('assets/frontend') ?>/images/shapes/subscribe-dot-1-1.png" class="mailchimp-one__bg-shape-1" alt="">
             <img src="<?= base_url('assets/frontend') ?>/images/shapes/subscribe-shape-1-1.png" class="mailchimp-one__bg-shape-2" alt="">
             <div class="block-title text-center">

@@ -12,7 +12,7 @@ class Portfolio extends CI_Controller
 
     public function index()
     {
-        $data['portfolio'] = $this->Page_model->get_portfolio(5);
+        $data['portfolio'] = $this->Page_model->get_portfolio();
         $data['kportfolio'] = $this->Page_model->get_kategoriPortfolio();
         $data['home'] = $this->Setting_model->get_setting();
         $data['brand'] = $this->Setting_model->get_brand();

@@ -166,7 +166,7 @@
             <div class="col-lg-6 d-flex">
                 <div class="my-auto">
                     <div class="about-one__image wow slideInDown" data-wow-duration="1500ms">
-                        <img src="<?= base_url('assets/frontend') ?>/images/mocups/about-1-moc-1.png" aria-label="About">
+                        <img src="<?= base_url('assets/frontend') ?>/images/mocups/about-1-moc-1.webp" aria-label="About">
                     </div><!-- /.about-one__image -->
                 </div><!-- /.my-auto -->
             </div><!-- /.col-lg-6 -->

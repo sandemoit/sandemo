@@ -117,19 +117,22 @@ class Contact extends CI_Controller
 
     public function sendwa() //WhatsApp redirect
     {
+        // Mengambil nomor HP (nohp) dari database
+        $this->db->select('nohp');
+        $query = $this->db->get('setting');
+        if ($query->num_rows() > 0) {
+            $row = $query->row();
+            $nowa = $row->nohp;
+        }
+
         $name = urlencode($this->input->post('name', true));
         $email = urlencode($this->input->post('email', true));
         $subject = urlencode('Consultation');
-        $nowa = urlencode($this->input->post('nowa', true));
         $pesan = urlencode($this->input->post('pesan', true));
 
         $this->load->model('Signup_model');
         $dataemail = str_replace('%40', '@', $email);
         $this->Signup_model->save_email($dataemail);
-
-        // Validate input and format phone number for WhatsApp Web
-        $nowa = preg_replace('/[^0-9]/', '', $nowa);
-        $nowa = '62' . substr($nowa, -11);
 
         $message = "Name: " . urlencode($name) . "%0ASubject: " . urlencode($subject) . "%0APesan: " . urlencode($pesan);
         $url = 'https://api.whatsapp.com/send?phone=' . $nowa . '&text=' . $message;

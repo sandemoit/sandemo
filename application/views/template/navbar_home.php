@@ -20,8 +20,8 @@
                     <li class="dropdown">
                         <a href="javascript:;">Pages</a>
                         <ul>
-                            <li><a href="<?= site_url('layanan/service') ?>">Service</a></li>
-                            <li><a href="<?= site_url('layanan/packetappweb') ?>">Package App</a></li>
+                            <li><a href="<?= site_url('service') ?>">Service</a></li>
+                            <li><a href="<?= site_url('packetappweb') ?>">Package App</a></li>
                         </ul>
                     </li>
 

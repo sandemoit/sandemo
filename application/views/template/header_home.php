@@ -93,11 +93,12 @@
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="lds-ripple">
             <div></div>
             <div></div>
         </div>
-    </div><!-- /.preloader -->
+    </div> -->
+    <!-- /.preloader -->
 
     <div class="page-wrapper">

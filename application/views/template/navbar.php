@@ -13,7 +13,7 @@
                         <a href="<?= site_url('') ?>">Home</a>
                     </li>
 
-                    <li>
+                    <li class="<?= ($this->uri->segment(1) == 'about') ? 'current' : '' ?>">
                         <a href="<?= site_url('about') ?>">About</a>
                     </li>
 
@@ -25,19 +25,15 @@
                         </ul>
                     </li>
 
-                    <!-- <li>
-                        <a href="<?= site_url('profile') ?>">Profile</a>
-                    </li> -->
-
-                    <li>
-                        <a href="<?= site_url('portfolio') ?>">Portfolio</a>
+                    <li class="<?= ($this->uri->segment(1) == 'portfolio') ? 'current' : '' ?>">
+                        <a href="<?= site_url('portfolio') ?>">Portofolio</a>
                     </li>
 
-                    <li>
+                    <li class="<?= ($this->uri->segment(1) == 'karir') ? 'current' : '' ?>">
                         <a href="<?= site_url('karir') ?>">Career</a>
                     </li>
 
-                    <li>
+                    <li class="<?= ($this->uri->segment(1) == 'blog') ? 'current' : '' ?>">
                         <a href="<?= site_url('blog') ?>">Blog</a>
                     </li>
 
