@@ -42,7 +42,7 @@ header('Content-type: application/xml; charset="ISO-8859-1"', true);
     <?php foreach ($article as $data) { ?>
         <url>
             <loc><?php echo base_url('blog/') . $data->kategori . '/' . $data->slug; ?></loc>
-            <priority>0.75</priority>
+            <priority>1.0</priority>
             <lastmod><?php echo date('c', $data->date_created); ?></lastmod>
         </url>
     <?php } ?>
