@@ -344,6 +344,7 @@ class Page extends CI_Controller
 
         // Send the message
         $isSuccess = $this->send_message($whatsapp, $message);
+
         if ($isSuccess) {
             // Update the database
             $adminName = $this->session->userdata('email');
@@ -404,12 +405,16 @@ class Page extends CI_Controller
                         'balasan' => $message,
                         'id_admin' => $adminName
                     ])->where('whatsapp', $contact['whatsapp'])->update('contact');
+
+                    // Set flash data and redirect
+                    $this->session->set_flashdata('message', '<div class="alert alert-success text-center" role="alert">Berhasil mengirim pesan ke semua kontak</div>');
+                    redirect($_SERVER['HTTP_REFERER']);
+                } else {
+                    // Return an error response
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger text-center" role="alert">Gagal mengirim pesan</div>');
+                    redirect($_SERVER['HTTP_REFERER']);
                 }
             }
-
-            // Set flash data and redirect
-            $this->session->set_flashdata('message', '<div class="alert alert-success text-center" role="alert">Berhasil mengirim pesan ke semua kontak</div>');
-            redirect($_SERVER['HTTP_REFERER']);
         } else {
             // Send the message to the selected contact
             $isSuccess = $this->send_message($whatsapp, $message);
