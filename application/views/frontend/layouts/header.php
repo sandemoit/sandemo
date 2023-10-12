@@ -326,18 +326,19 @@
         <nav class="side-mobile-menu">
             <ul id="mobile-menu-active">
                 <li><a href="<?= site_url('') ?>">Home</a></li>
-                <li><a href="contact.html">Tentang Kami</a></li>
+                <li><a href="<?= site_url('tentang-kami') ?>">Tentang Kami</a></li>
                 <li class="has-dropdown">
                     <a href="#" aria-expanded="false">Layanan</a>
                     <ul class="sub-menu mm-collapse" style="height: 0px;">
-                        <li><a href="team.html">Team</a></li>
+                        <li><a href="<?= site_url('web-development') ?>">Web Development</a></li>
+                        <li><a href="<?= site_url('redesign-web') ?>">Redesign Web</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Portofolio</a></li>
-                <li><a href="contact.html">Karir</a></li>
-                <li><a href="contact.html">Team</a></li>
-                <li><a href="contact.html">Blog</a></li>
-                <li><a href="contact.html">Kontak</a></li>
+                <li><a href="<?= site_url('portfolio') ?>">Portofolio</a></li>
+                <li><a href="<?= site_url('karir') ?>">Karir</a></li>
+                <li><a href="<?= site_url('team') ?>">Team</a></li>
+                <li><a href="<?= site_url('blog') ?>">Blog</a></li>
+                <li><a href="<?= site_url('kontak') ?>">Kontak</a></li>
             </ul>
         </nav>
         <!-- side-mobile-menu end -->
