@@ -105,10 +105,9 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- header-area start -->
+    <!-- Mengecek apakah halaman saat ini adalah halaman home -->
     <?php
-    // Mengecek apakah halaman saat ini adalah halaman home
-    $is_home = (current_url() == site_url(''));
-    if ($is_home) : ?>
+    if ($this->uri->segment(1) == '') : ?>
         <header>
             <div class="header-top-3 theme-bg2">
                 <div class="container">
@@ -210,6 +209,33 @@
                 <!-- /.theme-main-menu -->
             </div>
         </header>
+
+        <aside class="slide-bar">
+            <div class="close-mobile-menu">
+                <a href="javascript:void(0);"><i class="fas fa-times"></i></a>
+            </div>
+            <!-- side-mobile-menu start -->
+            <nav class="side-mobile-menu">
+                <ul id="mobile-menu-active">
+                    <li><a href="<?= site_url('') ?>">Home</a></li>
+                    <li><a href="<?= site_url('tentang-kami') ?>">Tentang Kami</a></li>
+                    <li class="has-dropdown">
+                        <a href="#" aria-expanded="false">Layanan</a>
+                        <ul class="sub-menu mm-collapse" style="height: 0px;">
+                            <li><a href="<?= site_url('web-development') ?>">Web Development</a></li>
+                            <li><a href="<?= site_url('redesign-web') ?>">Redesign Web</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="<?= site_url('portfolio') ?>">Portofolio</a></li>
+                    <li><a href="<?= site_url('karir') ?>">Karir</a></li>
+                    <li><a href="<?= site_url('team') ?>">Team</a></li>
+                    <li><a href="<?= site_url('blog') ?>">Blog</a></li>
+                    <li><a href="<?= site_url('kontak') ?>">Kontak</a></li>
+                </ul>
+            </nav>
+            <!-- side-mobile-menu end -->
+        </aside>
+        <div class="body-overlay"></div>
     <?php else : ?>
         <header class="transparent-header">
             <div class="header-top">
@@ -314,34 +340,32 @@
                 <!-- /.theme-main-menu -->
             </div>
         </header>
+
+        <aside class="slide-bar">
+            <div class="close-mobile-menu">
+                <a href="javascript:void(0);"><i class="fas fa-times"></i></a>
+            </div>
+            <!-- side-mobile-menu start -->
+            <nav class="side-mobile-menu">
+                <ul id="mobile-menu-active">
+                    <li><a href="<?= site_url('') ?>">Home</a></li>
+                    <li><a href="<?= site_url('tentang-kami') ?>">Tentang Kami</a></li>
+                    <li class="has-dropdown">
+                        <a href="#" aria-expanded="false">Layanan</a>
+                        <ul class="sub-menu mm-collapse" style="height: 0px;">
+                            <li><a href="<?= site_url('web-development') ?>">Web Development</a></li>
+                            <li><a href="<?= site_url('redesign-web') ?>">Redesign Web</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="<?= site_url('portfolio') ?>">Portofolio</a></li>
+                    <li><a href="<?= site_url('karir') ?>">Karir</a></li>
+                    <li><a href="<?= site_url('team') ?>">Team</a></li>
+                    <li><a href="<?= site_url('blog') ?>">Blog</a></li>
+                    <li><a href="<?= site_url('kontak') ?>">Kontak</a></li>
+                </ul>
+            </nav>
+            <!-- side-mobile-menu end -->
+        </aside>
+        <div class="body-overlay"></div>
     <?php endif; ?>
     <!-- header-area end -->
-
-    <!-- slide-bar start -->
-    <aside class="slide-bar">
-        <!-- side-mobile-menu start -->
-        <div class="close-mobile-menu">
-            <a href="javascript:void(0);"><i class="fas fa-times"></i></a>
-        </div>
-        <nav class="side-mobile-menu">
-            <ul id="mobile-menu-active">
-                <li><a href="<?= site_url('') ?>">Home</a></li>
-                <li><a href="<?= site_url('tentang-kami') ?>">Tentang Kami</a></li>
-                <li class="has-dropdown">
-                    <a href="#" aria-expanded="false">Layanan</a>
-                    <ul class="sub-menu mm-collapse" style="height: 0px;">
-                        <li><a href="<?= site_url('web-development') ?>">Web Development</a></li>
-                        <li><a href="<?= site_url('redesign-web') ?>">Redesign Web</a></li>
-                    </ul>
-                </li>
-                <li><a href="<?= site_url('portfolio') ?>">Portofolio</a></li>
-                <li><a href="<?= site_url('karir') ?>">Karir</a></li>
-                <li><a href="<?= site_url('team') ?>">Team</a></li>
-                <li><a href="<?= site_url('blog') ?>">Blog</a></li>
-                <li><a href="<?= site_url('kontak') ?>">Kontak</a></li>
-            </ul>
-        </nav>
-        <!-- side-mobile-menu end -->
-    </aside>
-    <div class="body-overlay"></div>
-    <!-- slide-bar end -->
