@@ -14,16 +14,15 @@ class Portfolio extends CI_Controller
     {
         $data['portfolio'] = $this->Page_model->get_portfolio();
         $data['kportfolio'] = $this->Page_model->get_kategoriPortfolio();
+        $data['brand'] = $this->Setting_model->get_brand();
         $data['home'] = $this->Setting_model->get_setting();
         $data['brand'] = $this->Setting_model->get_brand();
         $data['setting'] = $this->Setting_model->get_setting();
         $data['title'] = 'Portfolio';
 
-        $this->load->view('template/header', $data);
-        $this->load->view('template/navbar');
-        $this->load->view('template/page_header');
+        $this->load->view('frontend/layouts/header', $data);
         $this->load->view('frontend/portfolio');
-        $this->load->view('template/footer');
+        $this->load->view('frontend/layouts/footer', $data);
     }
 
     public function compro()

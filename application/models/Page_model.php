@@ -57,7 +57,7 @@ class Page_model extends CI_Model
         $this->db->select('blog.*, kategori_blog.kategori, kategori_blog.id as kat_id');
         $this->db->join('kategori_blog', 'blog.id_kategori=kategori_blog.id');
         $this->db->order_by('blog.id', 'DESC');
-        return $this->db->get('blog');
+        return $this->db->get('blog')->result_array();
     }
 
     public function get_blog_recent($limit = null, $start = null, $id = null)
@@ -75,6 +75,16 @@ class Page_model extends CI_Model
     public function get_kategori_blog()
     {
         return $this->db->get('kategori_blog')->result_array();
+    }
+
+    public function get_count_kategori()
+    {
+        $this->db->select('kategori_blog.*, COUNT(blog.id) as total_blog');
+        $this->db->from('kategori_blog');
+        $this->db->join('blog', 'kategori_blog.id = blog.id_kategori', 'left');
+        $this->db->group_by('kategori_blog.id');
+        $query = $this->db->get();
+        return $query->result_array();
     }
 
     public function delete_blog($where, $table)

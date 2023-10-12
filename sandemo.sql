@@ -78,10 +78,10 @@ INSERT INTO `brand` (`id`, `brand_name`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `careers`
+-- Table structure for table `karir`
 --
 
-CREATE TABLE `careers` (
+CREATE TABLE `karir` (
   `id` int NOT NULL,
   `code_job` int DEFAULT NULL,
   `name_job` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
@@ -93,10 +93,10 @@ CREATE TABLE `careers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `careers`
+-- Dumping data for table `karir`
 --
 
-INSERT INTO `careers` (`id`, `code_job`, `name_job`, `location_job`, `jenis_pekerjaan`, `description`, `date_job`, `limit_job`) VALUES
+INSERT INTO `karir` (`id`, `code_job`, `name_job`, `location_job`, `jenis_pekerjaan`, `description`, `date_job`, `limit_job`) VALUES
 (9, 982, 'Mobile App Developer', 'Palembang', 'Freelance', '<p><strong>Deskripsi</strong></p>\r\n\r\n<p>Kami sedang mencari seorang Mobile App Developer yang berpengalaman dan kreatif untuk bekerja sebagai kontraktor proyek dalam tim pengembangan aplikasi mobile kami. Sebagai Mobile App Developer, Anda akan bertanggung jawab dalam merancang, mengembangkan, dan menguji aplikasi mobile yang inovatif dan menarik.</p>\r\n\r\n<p><strong>Tanggung Jawab:</strong></p>\r\n\r\n<ul>\r\n <li>Merancang, mengembangkan, dan memelihara aplikasi mobile menggunakan bahasa pemrograman seperti Java atau Kotlin (untuk platform Android) atau Swift atau Objective-C (untuk platform iOS).</li>\r\n <li>Mengimplementasikan desain dan antarmuka pengguna yang menarik dan responsif.</li>\r\n <li>Mengintegrasikan fitur-fitur seperti pemrosesan pembayaran, penggunaan API, dan notifikasi push ke dalam aplikasi.</li>\r\n <li>Memastikan kualitas aplikasi melalui pengujian dan debugging yang cermat.</li>\r\n <li>Mengoptimalkan performa aplikasi untuk memastikan kinerja yang baik di berbagai perangkat mobile.</li>\r\n <li>Mengikuti tren terbaru dalam pengembangan aplikasi mobile dan menggunakan praktik terbaik dalam pengembangan aplikasi.</li>\r\n</ul>\r\n\r\n<p><strong>Kualifikasi:</strong></p>\r\n\r\n<ul>\r\n <li>Pengalaman kerja minimal 2 tahun sebagai Mobile App Developer atau posisi terkait.</li>\r\n <li>Penguasaan yang kuat dalam bahasa pemrograman Java atau Kotlin (untuk platform Android) atau Swift atau Objective-C (untuk platform iOS).</li>\r\n <li>Pemahaman yang baik tentang desain antarmuka pengguna mobile.</li>\r\n <li>Pengalaman dalam penggunaan alat pengembangan seperti Android Studio atau Xcode.</li>\r\n <li>Memiliki portofolio yang menunjukkan keterampilan dalam pengembangan aplikasi mobile.</li>\r\n <li>Memiliki pengetahuan tentang pemrosesan pembayaran, penggunaan API, dan notifikasi push.</li>\r\n <li>Kemampuan untuk bekerja secara mandiri dan mengelola proyek secara efektif.</li>\r\n <li>Kreatif dan mampu berpikir solutif dalam menghadapi tantangan teknis.</li>\r\n</ul>\r\n\r\n<p>Kami menawarkan kesempatan untuk bekerja secara fleksibel sebagai kontraktor proyek, dengan pembayaran yang kompetitif berdasarkan proyek yang diselesaikan.</p>\r\n\r\n<p>Jika Anda tertarik dengan posisi ini, silakan kirimkan CV, Portfolio, dan surat lamaran Anda pada form di bawah. Kami akan meninjau lamaran Anda dengan saksa</p>', '2023-06-28', '2023-06-15'),
 (10, 343, 'Staf Akuntan', 'Gelumbang, Muara Enim <br> Sumatera Selatan', 'Freelance', '<p><strong>Deskripsi</strong></p>\r\n\r\n<p>Kami sedang mencari seorang Staf Akuntan yang berpengalaman dan mandiri untuk bekerja sebagai kontraktor proyek dalam tim keuangan kami. Sebagai Staf Akuntan, Anda akan bertanggung jawab dalam melakukan tugas akuntansi, pemrosesan data, dan pembuatan laporan keuangan yang akurat dan tepat waktu.</p>\r\n\r\n<p><strong>Tanggung Jawab:</strong></p>\r\n\r\n<ul>\r\n <li>Memasukkan dan memproses invoice.</li>\r\n <li>Menginput Transaksi penjualan, pembelian, kas masuk, kas keluar, jurnal umum.</li>\r\n <li>Memeriksa, menyeimbangkan, dan merekonsiliasi catatan keuangan perusahaan.</li>\r\n <li>Menyiapkan dan menyajikan laporan keuangan bulanan, termasuk neraca, laporan laba rugi, dan laporan arus kas.</li>\r\n <li>Mengelola dan mengawasi administrasi pajak, termasuk perhitungan dan pelaporan pajak.</li>\r\n <li>Melakukan analisis keuangan dan memberikan rekomendasi berdasarkan data keuangan yang ada.</li>\r\n <li>Memastikan kepatuhan terhadap peraturan akuntansi dan perpajakan yang berlaku.</li>\r\n <li>Menggunakan Excel dan perangkat lunak akuntansi lainnya untuk pemrosesan dan analisis data keuangan.</li>\r\n</ul>\r\n\r\n<p><strong>Kualifikasi:</strong></p>\r\n\r\n<ul>\r\n <li>Minimal SMA/SMK, di utamakan D3/S1 Jurusan Management Keuangan/Akuntansi</li>\r\n <li>Fresh graduate/Lulusan Baru atau pengalaman 1 tahun di bidang accounting</li>\r\n <li>Kemampuan komunikasi yang baik dan dapat bekerja dengan baik dalam tim.</li>\r\n <li>Umur maksimal 27 tahun</li>\r\n <li>Wajib menguasai Microsoft Excel untuk pemrosesan data dan analisis keuangan.</li>\r\n <li>Wajib Mempunyai Laptop/PC sendiri</li>\r\n</ul>\r\n\r\n<p>Kami menawarkan kesempatan untuk bekerja secara fleksibel sebagai kontraktor proyek, dengan pembayaran yang kompetitif berdasarkan proyek yang diselesaikan.</p>\r\n\r\n<p>Jika Anda tertarik dengan posisi ini, silakan kirimkan CV, Portfolio, dan surat lamaran Anda pada form di bawah menjadi satu. Kami akan meninjau lamaran Anda dengan saksama.</p>', '2023-06-28', '2023-06-15');
 
@@ -246,19 +246,19 @@ INSERT INTO `kategori_portfolio` (`id`, `kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `newsletter`
+-- Table structure for table `subscriber`
 --
 
-CREATE TABLE `newsletter` (
+CREATE TABLE `subscriber` (
   `id` int NOT NULL,
   `email` varchar(128) COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `newsletter`
+-- Dumping data for table `subscriber`
 --
 
-INSERT INTO `newsletter` (`id`, `email`) VALUES
+INSERT INTO `subscriber` (`id`, `email`) VALUES
 (11, 'sandimaulidika@gmail.com'),
 (12, 'infosandemo@gmail.com'),
 (13, 'vonisnd@gmail.com'),
@@ -480,7 +480,7 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (27, 1, 'Data Team', 'admin/admin/data', 'fa-solid fa-users', 1),
 (28, 1, 'Tambah Developer', 'admin/admin/tambah', 'icon-user', 0),
 (29, 6, 'Pesan', 'admin/page/pesan', 'fa-solid fa-message', 1),
-(30, 6, 'Career', 'admin/page/career', 'fa-solid fa-user-tie', 1),
+(30, 6, 'karir', 'admin/page/karir', 'fa-solid fa-user-tie', 1),
 (31, 1, 'Job Apply', 'admin/admin/kandidat', 'fa-solid fa-people-robbery', 1);
 
 -- --------------------------------------------------------
@@ -513,9 +513,9 @@ ALTER TABLE `brand`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `careers`
+-- Indexes for table `karir`
 --
-ALTER TABLE `careers`
+ALTER TABLE `karir`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -555,9 +555,9 @@ ALTER TABLE `kategori_portfolio`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `newsletter`
+-- Indexes for table `subscriber`
 --
-ALTER TABLE `newsletter`
+ALTER TABLE `subscriber`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -625,9 +625,9 @@ ALTER TABLE `brand`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `careers`
+-- AUTO_INCREMENT for table `karir`
 --
-ALTER TABLE `careers`
+ALTER TABLE `karir`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
@@ -655,9 +655,9 @@ ALTER TABLE `kategori_portfolio`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `newsletter`
+-- AUTO_INCREMENT for table `subscriber`
 --
-ALTER TABLE `newsletter`
+ALTER TABLE `subscriber`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --

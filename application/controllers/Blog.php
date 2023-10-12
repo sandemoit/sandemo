@@ -12,16 +12,14 @@ class Blog extends CI_Controller
 
     public function index()
     {
-        $data['blog'] = $this->Page_model->get_blog(5, 0)->result_array();
+        $data['blog'] = $this->Page_model->get_blog(5, 0);
         $data['home'] = $this->Setting_model->get_setting();
         $data['setting'] = $this->Setting_model->get_setting();
-
         $data['title'] = 'Blog';
-        $this->load->view('template/header', $data);
-        $this->load->view('template/navbar');
-        $this->load->view('template/page_header');
-        $this->load->view('frontend/blog', $data);
-        $this->load->view('template/footer');
+
+        $this->load->view('frontend/layouts/header', $data);
+        $this->load->view('frontend/blog');
+        $this->load->view('frontend/layouts/footer', $data);
     }
 
     public function read($category, $slug)
@@ -36,7 +34,8 @@ class Blog extends CI_Controller
 
         $data['title'] = $data['seo']['title'];
         $data['category'] = $this->db->get('kategori_blog')->result_array();
-        $data['recent'] =  $this->Page_model->get_blog_recent(6, 0)->result_array();
+        $data['recent'] =  $this->Page_model->get_blog_recent(5, 0)->result_array();
+        $data['count'] =  $this->Page_model->get_count_kategori();
 
         $data['next_post'] = $this->db
             ->where('blog.id<', $data['seo']['id'])
@@ -49,11 +48,7 @@ class Blog extends CI_Controller
             ->where('blog.id>', $data['seo']['id'])
             ->get('blog')->row_array();
 
-        $this->load->view('template/header_blog', $data);
-        $this->load->view('template/navbar');
-        $this->load->view('template/page_header');
         $this->load->view('frontend/blog-detail', $data);
-        $this->load->view('template/footer');
     }
 
     public function sharePost($category, $slug)

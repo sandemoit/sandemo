@@ -10,27 +10,14 @@ class Layanan extends CI_Controller
         $this->load->helper(array('url', 'download'));
     }
 
-    public function service()
+    public function webdevelopment()
     {
         $data['home'] = $this->Setting_model->get_setting();
-        $data['title'] = 'Service';
         $data['setting'] = $this->Setting_model->get_setting();
-        $this->load->view('template/header', $data);
-        $this->load->view('template/navbar');
-        $this->load->view('template/page_header');
-        $this->load->view('frontend/service');
-        $this->load->view('template/footer');
-    }
+        $data['title'] = 'Web Development';
 
-    public function packetappweb()
-    {
-        $data['title'] = 'Packet App & Web';
-        $data['home'] = $this->Setting_model->get_setting();
-        $data['setting'] = $this->Setting_model->get_setting();
-        $this->load->view('template/header', $data);
-        $this->load->view('template/navbar');
-        $this->load->view('template/page_header');
-        $this->load->view('frontend/packet-app-web');
-        $this->load->view('template/footer');
+        $this->load->view('frontend/layouts/header', $data);
+        $this->load->view('frontend/web-development');
+        $this->load->view('frontend/layouts/footer');
     }
 }

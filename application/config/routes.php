@@ -54,14 +54,17 @@ $route['admin'] = 'admin/auth';
 $route['404_override'] = 'Error_404';
 $route['translate_uri_dashes'] = FALSE;
 
+// frontend menu
+$route['tentang-kami'] = 'about';
+
 // blog 
 $route['blog'] = 'blog';
 $route['blog/share'] = 'blog/sharePost';
 $route['blog/(:any)/(:any)'] = 'blog/read/$1/$2';
 
 // layanan
-$route['service'] = 'layanan/service';
-$route['packetappweb'] = 'layanan/packetappweb';
+$route['web-development'] = 'layanan/webdevelopment';
+$route['redesign-web'] = 'layanan/redesignweb';
 
 // sitemap
 $route['sitemap\.xml'] = "sitemap";

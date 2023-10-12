@@ -45,6 +45,11 @@ class Setting_model extends CI_Model
         $this->db->delete($table, $where);
     }
 
+    public function get_portfolio()
+    {
+        $this->db->get('portfolio')->result_array();
+    }
+
     public function add_kategori_portfolio($data)
     {
         $this->db->insert('kategori_portfolio', $data);

@@ -7,22 +7,20 @@ class Karir extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Setting_model');
-        $this->load->model('Career_model');
+        $this->load->model('Karir_model');
         $this->load->model('Whatsapp_model', 'wa');
     }
 
     public function index()
     {
         $data['home'] = $this->Setting_model->get_setting();
-        $data['careers'] = $this->Career_model->get_all_careers();
-        $data['title'] = 'Careers';
+        $data['karir'] = $this->Karir_model->get_all_karir();
         $data['setting'] = $this->Setting_model->get_setting();
+        $data['title'] = 'Karir';
 
-        $this->load->view('template/header', $data);
-        $this->load->view('template/navbar');
-        $this->load->view('template/page_header');
+        $this->load->view('frontend/layouts/header', $data);
         $this->load->view('frontend/karir');
-        $this->load->view('template/footer');
+        $this->load->view('frontend/layouts/footer', $data);
     }
 
     public function apply($encoded_name_job)
@@ -32,37 +30,31 @@ class Karir extends CI_Controller
         $data['home'] = $this->Setting_model->get_setting();
         $data['setting'] = $this->Setting_model->get_setting();
         $data['brand'] = $this->Setting_model->get_brand();
-        $career_details = $this->Career_model->get_career_details($name_job);
+        $karir_details = $this->Karir_model->get_karir_details($name_job);
 
-        if ($career_details !== null) {
+        if ($karir_details !== null) {
             $today = date('Y-m-d');
-            $isClosed = ($today > $career_details['limit_job']);
+            $isClosed = ($today > $karir_details['limit_job']);
 
             if ($isClosed) {
                 // Tampilkan pesan bahwa pendaftaran sudah ditutup
                 $data['title'] = 'Pendaftaran Ditutup';
-                $this->load->view('template/header', $data);
-                $this->load->view('template/navbar');
-                $this->load->view('template/page_header');
+                $this->load->view('frontend/layouts/header', $data);
                 $this->load->view('errors/notfound_karir', $data);
-                $this->load->view('template/footer');
+                $this->load->view('frontend/layouts/header', $data);
             } else {
-                $data['career'] = $career_details;
-                $data['title'] = $career_details['name_job'];
+                $data['karir'] = $karir_details;
+                $data['title'] = $karir_details['name_job'];
 
-                $this->load->view('template/header', $data);
-                $this->load->view('template/navbar');
-                $this->load->view('template/page_header');
+                $this->load->view('frontend/layouts/header', $data);
                 $this->load->view('frontend/karir_detail', $data);
-                $this->load->view('template/footer');
+                $this->load->view('frontend/layouts/footer', $data);
             }
         } else {
             $data['title'] = 'Karir Not Found';
-            $this->load->view('template/header', $data);
-            $this->load->view('template/navbar');
-            $this->load->view('template/page_header');
+            $this->load->view('frontend/layouts/header', $data);
             $this->load->view('errors/notfound_karir', $data);
-            $this->load->view('template/footer');
+            $this->load->view('frontend/layouts/footer', $data);
         }
     }
 
@@ -94,7 +86,7 @@ class Karir extends CI_Controller
                 'status' => 'Belum Verifikasi',
                 'time' => time()
             ];
-
+            // simpan data
             $result = $this->db->insert('kandidat', $data);
 
             // send message using cURL
@@ -104,13 +96,11 @@ class Karir extends CI_Controller
                 . "https://sandemoindoteknologi.co.id");
 
             if ($result) {
-                $this->session->set_flashdata('success', 'Success to send data!');
-            } else {
-                $this->session->set_flashdata('warning', 'Failed to send data!');
+                $this->session->set_flashdata('success', 'Berhasil lamar pekerjaan!');
             }
         } else {
             $error = $this->upload->display_errors();
-            $this->session->set_flashdata('error', 'File failed to upload!');
+            $this->session->set_flashdata('error', $error);
         }
         redirect($_SERVER['HTTP_REFERER']);
     }

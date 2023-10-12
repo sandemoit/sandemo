@@ -9,7 +9,7 @@
                 <select class="form-select col-12" id="whatsapp" name="whatsapp">
                     <option selected disabled>Choose Number</option>
                     <option value="all">Semua Kontak</option>
-                    <?php foreach ($contact as $key) : ?>
+                    <?php foreach ($kontak as $key) : ?>
                         <option value="<?= $key['whatsapp'] ?>"><?= $key['name'] . ' | ' . $key['whatsapp'] ?></option>
                     <?php endforeach; ?>
                 </select>

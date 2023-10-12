@@ -9,7 +9,7 @@ class Page extends CI_Controller
         is_logged_in();
         $this->load->model('Page_model');
         $this->load->model('Setting_model');
-        $this->load->model('Career_model');
+        $this->load->model('Karir_model');
     }
 
     public function blog()
@@ -17,7 +17,7 @@ class Page extends CI_Controller
         $data['title'] = 'Blog';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-        $data['blog'] = $this->Page_model->get_blog()->result_array();
+        $data['blog'] = $this->Page_model->get_blog();
         $this->load->view('template_auth/header', $data);
         $this->load->view('template_auth/topbar', $data);
         $this->load->view('template_auth/sidebar', $data);
@@ -320,13 +320,13 @@ class Page extends CI_Controller
     // Balas pesan client menggunakan WAGW
     public function pesan()
     {
-        $data['title'] = 'Pesan Contact';
+        $data['title'] = 'Pesan Kontak';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['pesan'] = $this->db->get('contact')->result_array();
+        $data['pesan'] = $this->db->get('kontak')->result_array();
         $this->load->view('template_auth/header', $data);
         $this->load->view('template_auth/topbar', $data);
         $this->load->view('template_auth/sidebar', $data);
-        $this->load->view('page/pesan_contact', $data);
+        $this->load->view('page/pesan_kontak', $data);
         $this->load->view('template_auth/footer');
     }
 
@@ -352,7 +352,7 @@ class Page extends CI_Controller
                 'aksi' => 1,
                 'balasan' => $message,
                 'id_admin' => $adminName
-            ])->where('id', $idMessage)->update('contact');
+            ])->where('id', $idMessage)->update('kontak');
 
             // Set flash data and redirect
             $this->session->set_flashdata('message', '<div class="alert alert-success text-center" role="alert">Berhasil mengirim balasan</div>');
@@ -369,7 +369,7 @@ class Page extends CI_Controller
     {
         $data['title'] = 'Send Message';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['contact'] = $this->db->get('contact')->result_array();
+        $data['kontak'] = $this->db->get('kontak')->result_array();
         $this->load->view('template_auth/header', $data);
         $this->load->view('template_auth/topbar', $data);
         $this->load->view('template_auth/sidebar', $data);
@@ -390,12 +390,12 @@ class Page extends CI_Controller
         }
 
         if ($whatsapp === 'all') {
-            // Get all contacts from the database
-            $contacts = $this->db->get('contact')->result_array();
+            // Get all kontaks from the database
+            $kontaks = $this->db->get('kontak')->result_array();
 
-            // Send the message to each contact
-            foreach ($contacts as $contact) {
-                $isSuccess = $this->send_message($contact['whatsapp'], $message);
+            // Send the message to each kontak
+            foreach ($kontaks as $kontak) {
+                $isSuccess = $this->send_message($kontak['whatsapp'], $message);
 
                 if ($isSuccess) {
                     // Update the database
@@ -404,7 +404,7 @@ class Page extends CI_Controller
                         'aksi' => 1,
                         'balasan' => $message,
                         'id_admin' => $adminName
-                    ])->where('whatsapp', $contact['whatsapp'])->update('contact');
+                    ])->where('whatsapp', $kontak['whatsapp'])->update('kontak');
 
                     // Set flash data and redirect
                     $this->session->set_flashdata('message', '<div class="alert alert-success text-center" role="alert">Berhasil mengirim pesan ke semua kontak</div>');
@@ -416,7 +416,7 @@ class Page extends CI_Controller
                 }
             }
         } else {
-            // Send the message to the selected contact
+            // Send the message to the selected kontak
             $isSuccess = $this->send_message($whatsapp, $message);
 
             if ($isSuccess) {
@@ -426,7 +426,7 @@ class Page extends CI_Controller
                     'aksi' => 1,
                     'balasan' => $message,
                     'id_admin' => $adminName
-                ])->where('whatsapp', $whatsapp)->update('contact');
+                ])->where('whatsapp', $whatsapp)->update('kontak');
 
                 // Set flash data and redirect
                 $this->session->set_flashdata('message', '<div class="alert alert-success text-center" role="alert">Berhasil mengirim pesan</div>');
@@ -470,33 +470,33 @@ class Page extends CI_Controller
         echo $response;
     }
 
-    // Career
-    public function career()
+    // karir
+    public function karir()
     {
-        $data['title'] = 'Career';
+        $data['title'] = 'karir';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['careers'] = $this->Career_model->get_all_careers();
+        $data['karir'] = $this->Karir_model->get_all_karir();
 
         $this->load->view('template_auth/header', $data);
         $this->load->view('template_auth/topbar', $data);
         $this->load->view('template_auth/sidebar', $data);
-        $this->load->view('career/index', $data);
+        $this->load->view('karir/index', $data);
         $this->load->view('template_auth/footer');
     }
 
-    public function addCareer()
+    public function addkarir()
     {
-        $data['title'] = 'Tambah Career';
+        $data['title'] = 'Tambah karir';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $this->load->view('template_auth/header', $data);
         $this->load->view('template_auth/topbar', $data);
         $this->load->view('template_auth/sidebar', $data);
-        $this->load->view('career/add_karir', $data);
+        $this->load->view('karir/add_karir', $data);
         $this->load->view('template_auth/footer');
     }
 
-    public function doAddCareer()
+    public function doAddkarir()
     {
         $this->form_validation->set_rules('title', 'Title', 'trim|required');
 
@@ -513,18 +513,18 @@ class Page extends CI_Controller
             'limit_job' => $this->input->post('limit_job', true),
         ];
 
-        $this->db->insert('careers', $data);
+        $this->db->insert('karir', $data);
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-            Success added career!</div>
+            Success added karir!</div>
             ');
-        redirect('admin/page/career');
+        redirect('admin/page/karir');
     }
 
-    public function editCareer($id)
+    public function editkarir($id)
     {
-        $data['title'] = 'Edit Career';
+        $data['title'] = 'Edit karir';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['careers'] = $this->Career_model->get_career_by_id($id);
+        $data['karir'] = $this->Karir_model->get_karir_by_id($id);
         $data['id'] = $id;
 
         $this->form_validation->set_rules('name_job', 'Job Name', 'trim|required');
@@ -537,7 +537,7 @@ class Page extends CI_Controller
             $this->load->view('template_auth/header', $data);
             $this->load->view('template_auth/topbar', $data);
             $this->load->view('template_auth/sidebar', $data);
-            $this->load->view('career/edit_karir', $data);
+            $this->load->view('karir/edit_karir', $data);
             $this->load->view('template_auth/footer');
         } else {
             $newData = [
@@ -551,19 +551,19 @@ class Page extends CI_Controller
 
             $this->db->set($newData);
             $this->db->where('id', $id);
-            $this->db->update('careers');
+            $this->db->update('karir');
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-        Selamat! career berhasil di edit...</div>
+        Selamat! karir berhasil di edit...</div>
         ');
-            redirect('admin/page/career');
+            redirect('admin/page/karir');
         }
     }
 
 
-    public function deleteCareer($id)
+    public function deletekarir($id)
     {
-        $this->db->delete('careers', array('id' => $id));
-        $this->session->set_flashdata('message', '<div class="alert alert-success text-center" role="alert">Success delete career!</div>');
-        redirect('admin/page/career');
+        $this->db->delete('karir', array('id' => $id));
+        $this->session->set_flashdata('message', '<div class="alert alert-success text-center" role="alert">Success delete karir!</div>');
+        redirect('admin/page/karir');
     }
 }

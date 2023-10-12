@@ -1,100 +1,119 @@
-<section class="job">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="job__content">
-                    <?php if (validation_errors()) : ?>
-                        <div class="alert alert-danger" role="alert">
-                            <?= validation_errors(); ?>
+<main>
+    <!--slider-area start-->
+    <section class="page-title-area">
+        <img class="right-shape" src="<?= base_url('assets/frontend/') ?>img/cta/dot-shape-1.png" alt="Dot Pattern">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-title-wrapper pt-lg-100 pt-md-90 pt-xs-80" style="text-align: center;">
+                        <h2 class="page-title"><?= $title; ?></h2>
+                        <ul class="breadcrumb">
+                            <li><a href="<?= site_url('/') ?>">Home </a></li> <i class="breadpanah fas fa-chevron-right"></i>
+                            <li><a href="<?= site_url('/karir') ?>">Karir </a>
+                                <i class="breadpanah fas fa-chevron-right"></i>
+                            <li class="active" aria-current="page"> <?= $title ?></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--slider-area end-->
+
+    <section class="portfolio-details-area pt-105 pb-100 pt-md-60 pt-xs-60 pb-md-30 pb-xs-40">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="portfolio-details-content">
+                        <h3 class="s-sub-title mb-30">Kami sedang membutuhkan <?= $title; ?></h3>
+                        <div class="row client-values">
+                            <div class="col-lg-10 col-md-8">
+                                <ul>
+                                    <li><b>Date:</b> <?= format_indo($karir['date_job']) ?></li>
+                                    <li><b>Deadline:</b> <?= format_indo($karir['limit_job']) ?></li>
+                                    <li><b>Penempatan:</b> <?= $karir['location_job'] ?></li>
+                                    <li><b>Kategori Pekerjaan:</b> <?= $karir['jenis_pekerjaan'] ?></li>
+                                </ul>
+                            </div>
                         </div>
-                    <?php endif; ?>
-                    <?= $this->session->flashdata('message'); ?>
-                    <h3><?= $career['name_job'] ?></h3>
-                    <p><?= $career['description'] ?></p>
-                </div><!-- /.portfolio-details__content -->
-                <div class="contact-two__form-wrap job mt-5">
-                    <h3>Apply Job</h3>
-                    <form action="<?= base_url('karir/submit_form') ?>" enctype="multipart/form-data" method="POST" class="contact-one__form">
-                        <div class="row">
-                            <input type="hidden" name="id" value="<?= $career['id']; ?>">
-                            <div class="col-md-6">
-                                <input type="text" id="full_name" name="full_name" placeholder="Full Name*" required>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <input type="date" name="date_birth" placeholder="Date Birth*" required>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <input type="text" name="place_birth" placeholder="Place Birth" required>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <input type="text" name="email" placeholder="Email" required>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <input type="text" name="whatsapp" placeholder="WhatsApp" required>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <input type="text" name="religion" placeholder="Religion" required>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <input type="text" name="university" placeholder="University" required>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <input type="text" name="education_stage" placeholder="Education Stage - Major" required>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <input type="text" name="address" placeholder="Address" required>
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-6">
-                                <input type="file" name="cv_file" placeholder="Curriculum Vitae (PDF)">
-                            </div><!-- /.col-md-6 -->
-                            <div class="col-md-12 text-left">
-                                <button type="submit" id="submit-form" class="thm-btn contact-one__btn">Send Now</button>
-                            </div><!-- /.col-md-12 -->
-                        </div><!-- /.row -->
-                    </form><!-- /.contact-one__form -->
-                </div><!-- /.contact-two__form-wrap -->
-            </div><!-- /.col-lg-8 -->
-            <div class="col-lg-4 wow fadeInRight" data-wow-duration="1500ms">
-                <div class="job__info">
-                    <h3>Job Informations</h3>
-                    <div class="portfolio-details__info-single">
-                        <div class="portfolio-details__info-title">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Date :</span>
-                        </div><!-- /.portfolio-details__info-title -->
-                        <div class="portfolio-details__info-text">
-                            <p><?= format_indo(date('Y-m-d', strtotime($career['date_job']))) ?></p>
-                        </div><!-- /.portfolio-details__info-text -->
-                    </div><!-- /.portfolio-details__info-single -->
-                    <div class="portfolio-details__info-single">
-                        <div class="portfolio-details__info-title">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>Deadline :</span>
-                        </div><!-- /.portfolio-details__info-title -->
-                        <div class="portfolio-details__info-text">
-                            <p><?= format_indo(date('Y-m-d', strtotime($career['limit_job']))) ?></p>
-                        </div><!-- /.portfolio-details__info-text -->
-                    </div><!-- /.portfolio-details__info-single -->
-                    <div class="portfolio-details__info-single">
-                        <div class="portfolio-details__info-title">
-                            <i class="far fa-map-marker-alt"></i>
-                            <span>Location :</span>
-                        </div><!-- /.portfolio-details__info-title -->
-                        <div class="portfolio-details__info-text">
-                            <p><?= $career['location_job'] ?></p>
-                        </div><!-- /.portfolio-details__info-text -->
-                    </div><!-- /.portfolio-details__info-single -->
-                    <div class="portfolio-details__info-single">
-                        <div class="portfolio-details__info-title">
-                            <i class="far fa-bookmark"></i>
-                            <span>Jenis :</span>
-                        </div><!-- /.portfolio-details__info-title -->
-                        <div class="portfolio-details__info-text">
-                            <p><a href="#"><?= $career['jenis_pekerjaan'] ?></a></p>
-                        </div><!-- /.portfolio-details__info-text -->
-                    </div><!-- /.portfolio-details__info-single -->
-                </div><!-- /.portfolio-details__info -->
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-    </div><!-- /.container -->
-</section><!-- /.portfolio-details -->
+
+                        <div class="deskripsi-karir">
+                            <?= $karir['description'] ?>
+                        </div>
+
+                        <div class="row align-items-center mt-55" id="lamar-pekerjaan">
+                            <div class="col-lg-6">
+                                <div class="career-img-wrapper">
+                                    <img class="w-100" src="<?= base_url('assets/frontend/') ?>img/career/image.webp" alt="Img">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="contact-input-wrapper mb-30">
+                                    <div class="section-title mb-25">
+                                        <h2 class="sect-title mb-35">Lamar Pekerjaan</h2>
+                                    </div>
+                                    <form class="row contact-form" action="<?= site_url('karir/submit_form') ?>" enctype="multipart/form-data" method="POST">
+                                        <input type="hidden" name="id" value="<?= $karir['id']; ?>">
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="input-box mb-20">
+                                                <input type="text" name="full_name" placeholder="Nama Lengkap">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="input-box mail-input mb-20">
+                                                <input type="text" name="email" placeholder="Email address">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="input-box education-input mb-20">
+                                                <input type="text" name="university" placeholder="Universitas">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="input-box sub-input mb-20">
+                                                <input type="text" name="education_stage" placeholder="Jenjang Pendidikan - Jurusan">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="input-box birth-input mb-20">
+                                                <input type="text" name="date_birth" placeholder="Tanggal Lahir">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="input-box mb-20">
+                                                <input type="text" name="place_birth" placeholder="Tempat Lahir">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="input-box mb-20">
+                                                <input type="text" name="religion" placeholder="Agama">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="input-box number-input mb-20">
+                                                <input type="text" name="whatsapp" placeholder="Whatsapp">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="input-box home-input mb-20">
+                                                <input type="text" name="address" placeholder="Alamat Lengkap">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6">
+                                            <div class="input-box file-input mb-20">
+                                                <input class="form-control" type="file" name="cv_file" placeholder="Curriculum Vitae (PDF)">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="form-btn form-btn2">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

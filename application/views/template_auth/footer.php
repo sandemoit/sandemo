@@ -242,23 +242,12 @@
         $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary me-1');
     });
 </script>
-<script src="<?= base_url('assets/') ?>node_modules/ckeditor/build/ckeditor.js"></script>
-<script>
-    ClassicEditor
-        .create(document.querySelector('#editor'))
-        .catch(error => {
-            console.error(error);
-        });
-</script>
 
-<!-- ckeditor -->
-<script src="<?= base_url('assets/') ?>node_modules/ckeditor/build/ckeditor.js"></script>
+<!-- tinymce -->
 <script>
-    ClassicEditor
-        .create(document.querySelector('#editor'))
-        .catch(error => {
-            console.error(error);
-        });
+    tinymce.init({
+        selector: 'textarea#editor'
+    });
 </script>
 
 <!-- seacrh dropdown -->

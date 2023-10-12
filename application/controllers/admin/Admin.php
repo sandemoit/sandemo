@@ -8,7 +8,7 @@ class Admin extends CI_Controller
         parent::__construct();
         is_logged_in();
         $this->load->model('Admin_model');
-        $this->load->model('Career_model');
+        $this->load->model('Karir_model');
         $this->load->model('Setting_model');
         $this->load->model('Whatsapp_model', 'wa');
     }
@@ -24,7 +24,6 @@ class Admin extends CI_Controller
         $data['total_portfolio'] = $this->db->query('select * from portfolio')->num_rows();
         $data['total_blog'] = $this->db->query('select * from blog')->num_rows();
         $data['total_brand'] = $this->db->query('select * from brand')->num_rows();
-
 
         $this->load->view('template_auth/header', $data);
         $this->load->view('template_auth/topbar', $data);
@@ -199,7 +198,7 @@ class Admin extends CI_Controller
     public function kandidat()
     {
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-        $data['kandidat'] = $this->Career_model->get_kandidat();
+        $data['kandidat'] = $this->Karir_model->get_kandidat();
         $data['title'] = 'Data Kandidat';
 
         $this->load->view('template_auth/header', $data);
@@ -218,7 +217,7 @@ class Admin extends CI_Controller
         $this->db->where('id', $id);
         $this->db->update('kandidat', $data);
 
-        $no_wa = $this->Career_model->get_no_wa_by_id($id);
+        $no_wa = $this->Karir_model->get_no_wa_by_id($id);
 
         // Kirim pesan ke nomor WhatsApp
         $this->send_message($no_wa, "*Selamat!* Anda dinyatakan lulus seleksi di *PT. Sandemo Indo Teknologi*.\n"
