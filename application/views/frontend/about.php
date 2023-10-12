@@ -43,12 +43,10 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title text-center mb-55">
-                            <h6 class="semi-title mb-10">Visi dan Misi</h6>
-                            <h2 class="sect-title">Visi dan Misi Sandemo IT</h2>
-                        </div>
+                <div class="col">
+                    <div class="section-title text-center mb-55">
+                        <h6 class="semi-title mb-10">Visi dan Misi</h6>
+                        <h2 class="sect-title">Visi dan Misi Sandemo IT</h2>
                     </div>
                 </div>
                 <div class="visimisi">
