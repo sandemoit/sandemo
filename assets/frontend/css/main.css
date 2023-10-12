@@ -3799,7 +3799,7 @@ input.main-search-input:-ms-input-placeholder {
     text-align: center; }
 
 .video-wrapper {
-  background: url(../img/feature/keuntungan.webp) no-repeat center;
+  /* background: url(../img/feature/keuntungan.webp) no-repeat center; */
   background-size: cover;
   width: 500px;
   min-height: 500px;
