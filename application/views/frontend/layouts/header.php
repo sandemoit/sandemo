@@ -37,7 +37,7 @@
 
     <!-- CSS here -->
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/owl.carousel.min.css" />
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/animate.css" />
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/magnific-popup.css" />
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/all.min.css" />

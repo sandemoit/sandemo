@@ -419,12 +419,14 @@
                             <div class="widget widget-add">
                                 <!-- <h4 class="widget-sub-title2 fs-20 mb-30">Sponsor Adds</h4> -->
                                 <div class="banner-content mb-10">
-                                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3971040661867794" crossorigin="anonymous"></script>
-                                    <!-- Display BLog -->
-                                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3971040661867794" data-ad-slot="2634432157" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                                    <script>
-                                        (adsbygoogle = window.adsbygoogle || []).push({});
-                                    </script>
+                                    <div class="img-fluid">
+                                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3971040661867794" crossorigin="anonymous"></script>
+                                        <!-- Display BLog -->
+                                        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3971040661867794" data-ad-slot="2634432157" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                                        <script>
+                                            (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -523,6 +525,38 @@
     <script src="<?= base_url('assets/frontend/') ?>js/jquery.magnific-popup.min.js"></script>
     <script src="<?= base_url('assets/frontend/') ?>js/plugins.js"></script>
     <script src="<?= base_url('assets/frontend/') ?>js/main.js"></script>
+
+
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        <?php if ($this->session->flashdata('success')) { ?>
+            var text = <?php echo json_encode($this->session->flashdata('success')) ?>;
+            Swal.fire(
+                'Good job!',
+                text,
+                'success'
+            )
+        <?php } ?>
+
+        <?php if ($this->session->flashdata('error')) { ?>
+            var text = <?php echo json_encode($this->session->flashdata('error')) ?>;
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                html: text,
+            })
+        <?php } ?>
+
+        <?php if ($this->session->flashdata('warning')) { ?>
+            var text = <?php echo json_encode($this->session->flashdata('warning')) ?>;
+            Swal.fire({
+                icon: 'warning',
+                title: 'Warning!',
+                html: text,
+            })
+        <?php } ?>
+    </script>
     <!-- share instagram -->
     <script>
         function copyToClipboard(title, url) {
