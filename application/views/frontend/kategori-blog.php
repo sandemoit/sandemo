@@ -20,7 +20,7 @@
     <section class="news-details-area pt-105 pb-90 pt-md-60 pb-md-25 pt-xs-50 pb-xs-20">
         <div class="container">
             <div class="row mb-15">
-                <div class="col-lg-8">
+                <div class="col-lg-8 ">
                     <div class="news-left">
                         <?php foreach ($postingan as $key) : ?>
                             <div class="blogs blog-4 mb-40">

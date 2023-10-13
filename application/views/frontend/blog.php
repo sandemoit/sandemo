@@ -29,7 +29,7 @@
                                     <img src="<?= base_url('assets/frontend/img/blog/thumbnail/') . $key['gambar'] ?>" alt="Blog Img" class="blog-image">
                                 </a>
                             </div>
-                            <span class="tag"><?= $key['kategori'] ?></span>
+                            <span class="tag"><a href="<?= site_url('blog/kategori?filter=') . $key['kategori'] ?>"><?= $key['kategori'] ?></a></span>
                             <div class="blogs__meta mb-1">
                                 <span><?= format_indo(date('Y-m-d', $key['date_created'])) ?> / By </span>
                                 <span class="author"><?= $key['author'] ?></span>

@@ -315,7 +315,7 @@
                             </script>
                             <!-- end google adsense -->
 
-                            <div class="artikel-isi mb-55">
+                            <div class="artikel-isi">
                                 <?= $seo['isi'] ?>
                             </div>
 
