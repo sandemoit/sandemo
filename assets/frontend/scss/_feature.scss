@@ -191,11 +191,12 @@
     position: relative;
 
     @media #{$md} {
-        min-height: 400px;
+        display: none;
     }
 
     @media #{$xs} {
-        min-height: 300px;
+        display: none;
+
     }
 
     & .popup-video {

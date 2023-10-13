@@ -2582,10 +2582,10 @@ input.main-search-input:-ms-input-placeholder {
   position: relative; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .video-wrapper {
-      min-height: 400px; } }
+      display: none; } }
   @media (max-width: 767px) {
     .video-wrapper {
-      min-height: 300px; } }
+      display: none; } }
   .video-wrapper .popup-video {
     position: absolute;
     top: 50%;

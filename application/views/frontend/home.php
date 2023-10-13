@@ -9,12 +9,7 @@
                         <div class="dodlle-one two"></div>
                         <div class="dodlle-one three"></div>
                         <div class="row align-items-center">
-                            <div class="col-xl-6 col-lg-6">
-                                <div class="slider-right">
-                                    <img class="img-fluid" src="<?= base_url('assets/frontend/') ?>img/slider/image-slide.webp" alt="Hero Img">
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 order-last order-lg-first">
+                            <div class="col-xl-6 col-lg-6 order-first">
                                 <div class="slider__content">
                                     <h1 class="main-title-one">
                                         #1 Layanan Website
@@ -25,6 +20,11 @@
                                         <li><a class="theme_btn mr-30" href="tel:<?= $setting['nohp'] ?>"><i class="fas fa-phone-alt mr-10"></i> Hubungi Kami</a></li>
                                         <li><a target="_blank" class="theme_btn border_btn" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20bisa%20bantu%20untuk%20menjelaskan%20terkait%20layanan."><i class="fab fa-whatsapp mr-10"></i> Chat WhatsApp</a></li>
                                     </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="slider-right">
+                                    <img class="img-fluid" src="<?= base_url('assets/frontend/') ?>img/slider/image-slide.webp" alt="Hero Img">
                                 </div>
                             </div>
                         </div>
@@ -135,11 +135,11 @@
                         </ul>
                     </div>
                 </div>
-                <!-- <div class="col-lg-6 col-md">
+                <div class="col-lg-6 col-md">
                     <div class="video-wrapper">
-                        <a href="https://www.youtube.com/watch?v=yeZpJ6lJC54" class="popup-video"><i class="fas fa-play"></i></a>
+                        <!-- <a href="https://www.youtube.com/watch?v=yeZpJ6lJC54" class="popup-video"><i class="fas fa-play"></i></a> -->
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>

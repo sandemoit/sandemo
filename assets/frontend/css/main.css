@@ -3061,13 +3061,11 @@ input.main-search-input:-ms-input-placeholder {
     @media only screen and (min-width: 768px) and (max-width: 991px) {
       .slider-bg .slider__content {
         padding-left: 0;
-        padding-top: 50px;
-        padding-bottom: 60px; } }
+        padding-top: 50px; } }
     @media (max-width: 767px) {
       .slider-bg .slider__content {
         padding-left: 0;
-        padding-top: 50px;
-        padding-bottom: 60px; } }
+        padding-top: 50px;} }
   .slider-bg .slider-right {
     padding-top: 63px;
     margin-left: -32px; }
@@ -3077,9 +3075,11 @@ input.main-search-input:-ms-input-placeholder {
         margin-left: 0; } }
     @media only screen and (min-width: 768px) and (max-width: 991px) {
       .slider-bg .slider-right {
+        padding-top: 0;
         margin-left: 0; } }
     @media (max-width: 767px) {
       .slider-bg .slider-right {
+        padding-top: 0;
         margin-left: 0; } }
 
 #slider-one .owl-item.active h1 {
