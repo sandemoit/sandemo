@@ -26,7 +26,7 @@
                             <div class="blogs blog-4 mb-40">
                                 <div class="blog__thumb mb-55">
                                     <a href="<?= site_url('blog/' . $key['kategori'] . '/' . $key['slug']) ?>">
-                                        <img class="img-fluid" src="<?= base_url('assets/frontend/img/blog/thumbnail/') . $key['gambar'] ?>" alt="Blog Img">
+                                        <img class="img-kategori" src="<?= base_url('assets/frontend/img/blog/thumbnail/') . $key['gambar'] ?>" alt="Blog Img">
                                     </a>
                                     <div class="tag"><?= $key['kategori'] ?></div>
                                     <div class="commentor">
