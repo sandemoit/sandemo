@@ -101,7 +101,7 @@
                             <h6 class="semi-title text-white">Chat Us</h6>
                             <p class="paragrap-text text-white">Lebih dari 300+ klien merasa puas dengan hasil layanan yang telah kami berikan. Sekarang, waktunya bagi kami untuk mengoptimalkan bisnis Anda. <strong>Gratis Konsultasi!</strong></p>
                             <ul class="btn-list d-md-flex align-items-center justify-content-center">
-                                <li><a class="theme_btn mr-30 mr-xs-0" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20min,%20saya%20ingin%20bekerja%20sama%20dengan%20sandemo%20IT.%20Boleh%20berikan%20informasi%20lebih%20lanjut?"><i class="fab fa-whatsapp"></i> Chat Us</a>
+                                <li><a class="theme_btn mr-xs-0" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20min,%20saya%20ingin%20bekerja%20sama%20dengan%20sandemo%20IT.%20Boleh%20berikan%20informasi%20lebih%20lanjut?"><i class="fab fa-whatsapp"></i> Chat Us</a>
                                 </li>
                             </ul>
                         </div>

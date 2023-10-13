@@ -285,7 +285,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="page-title-wrapper pt-lg-100 pt-md-90 pt-xs-80" style="text-align: center;">
-                            <h2 class="page-title"><?= $title; ?></h2>
+                            <ul class="breadcrumb">
+                                <li><a href="<?= site_url('/') ?>">Home </a></li> <i class="breadpanah fas fa-chevron-right"></i>
+                                <li><a href="<?= site_url('blog') ?>">Blog </a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -297,10 +300,11 @@
                 <div class="row mb-15">
                     <div class="col-lg-8">
                         <div class="news-details-left mb-30">
+                            <h2 class="artikel-title"><?= $title; ?></h2>
                             <div class="blogs__meta">
                                 <span><i class="fal fa-pen"></i> <?= $seo['author'] ?></span>
-                                <span class="border-line2"><i class="fal fa-comments"></i> <a href="#disqus_thread"></a></span>
-                                <span><i class="fal fa-calendar-alt"></i> <?= date('d/m/Y H:i', $seo['date_created']) ?></span>
+                                <span class="border-line2"><i class="fal fa-calendar-alt"></i> </i> <?= date('d/m/Y H:i', $seo['date_created']) ?></span>
+                                <span><i class="fal fa-comments"></i> <a href="#disqus_thread"></a></span>
                             </div>
                             <img class="img-fluid" src="<?= base_url('assets/frontend') ?>/img/blog/<?= $seo['gambar'] ?>" alt="<?= $seo['title'] ?>">
                             <!-- google adsense -->
@@ -311,7 +315,7 @@
                             </script>
                             <!-- end google adsense -->
 
-                            <div class="mb-55">
+                            <div class="artikel-isi mb-55">
                                 <?= $seo['isi'] ?>
                             </div>
 

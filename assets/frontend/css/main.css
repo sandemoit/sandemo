@@ -157,12 +157,28 @@ li {
   list-style: none; }
 
 p {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 28px;
+  line-height: 27px;
   font-family: "GT Walsheim Pro";
-  color: #083d59;
-  margin-bottom: 0; }
+  color: #222;
+  margin: 0; }
+
+.artikel-isi p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  font-family: "GT Walsheim Pro";
+  color: #222;
+  margin-bottom: 22px; }
+  .artikel-isi li{
+  font-size: 18px;
+  list-style-type: square;
+  }
+  .artikel-title{
+    font-size: 33px;
+    margin-bottom: 20px;
+  }
 
 hr {
   border-bottom: 1px solid rgba(27, 33, 47, 0.1);
@@ -8534,8 +8550,8 @@ input.main-search-input:-ms-input-placeholder {
     .news-details-left .blogs__meta .border-line2 {
       position: relative;
       z-index: 1;
-      margin-left: 65px;
-      margin-right: 65px; }
+      margin-left: 45px;
+      margin-right: 45px; }
       @media (max-width: 767px) {
         .news-details-left .blogs__meta .border-line2 {
           margin-left: 8px;
