@@ -4326,6 +4326,19 @@ input.main-search-input:-ms-input-placeholder {
   .feature-area.features-bg.home-6 .container .feature-img-wrapper .img-fluid.one {
     max-width: 100%;
     height: auto; }
+    .img-fluid {
+      width: 894px; 
+      height: 382px;
+      object-fit: cover;}
+      @media (max-width: 992px) {
+        .img-fluid {
+          max-width: 100%;
+          height: auto;  } }
+      @media (max-width: 768px) {
+        .img-fluid {
+          max-width: 100%;
+          height: auto; }}
+
     @media (max-width: 768px) {
       .feature-area.features-bg.home-6 .container .feature-img-wrapper .img-fluid.one {
         width: 100%; } }

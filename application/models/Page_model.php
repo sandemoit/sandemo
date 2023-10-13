@@ -56,7 +56,7 @@ class Page_model extends CI_Model
         $this->db->limit($limit, $start);
         $this->db->select('blog.*, kategori_blog.kategori, kategori_blog.id as kat_id');
         $this->db->join('kategori_blog', 'blog.id_kategori=kategori_blog.id');
-        $this->db->order_by('blog.id', 'DESC');
+        $this->db->order_by('blog.date_created', 'DESC');
         return $this->db->get('blog')->result_array();
     }
 
@@ -68,7 +68,7 @@ class Page_model extends CI_Model
         $this->db->limit($limit, $start);
         $this->db->select('blog.*, kategori_blog.kategori, kategori_blog.id as kat_id');
         $this->db->join('kategori_blog', 'blog.id_kategori=kategori_blog.id');
-        $this->db->order_by('blog.id', 'DESC');
+        $this->db->order_by('blog.date_created', 'DESC');
         return $this->db->get('blog');
     }
 
@@ -86,6 +86,27 @@ class Page_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
     }
+
+    public function getKategoriByName($category_name)
+    {
+        $query = $this->db->where('kategori', $category_name)
+            ->get('kategori_blog');
+        return $query->row_array();
+    }
+
+    public function getBlogByKategori($id_kategori)
+    {
+        $query = $this->db->select('blog.*, kategori_blog.kategori as kategori')
+            ->from('blog')
+            ->join('kategori_blog', 'kategori_blog.id = blog.id_kategori')
+            ->where('blog.id_kategori', $id_kategori)
+            ->order_by('blog.date_created', 'DESC')
+            ->limit(5)  // Menampilkan hanya 5 data terbaru
+            ->get();
+
+        return $query->result_array();
+    }
+
 
     public function delete_blog($where, $table)
     {

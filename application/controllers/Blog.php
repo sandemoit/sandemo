@@ -13,7 +13,6 @@ class Blog extends CI_Controller
     public function index()
     {
         $data['blog'] = $this->Page_model->get_blog(5, 0);
-        $data['home'] = $this->Setting_model->get_setting();
         $data['setting'] = $this->Setting_model->get_setting();
         $data['title'] = 'Blog';
 
@@ -22,10 +21,25 @@ class Blog extends CI_Controller
         $this->load->view('frontend/layouts/footer', $data);
     }
 
+    public function kategori()
+    {
+        $data['setting'] = $this->Setting_model->get_setting();
+        $data['category'] = $this->db->get('kategori_blog')->result_array();
+        $data['recent'] =  $this->Page_model->get_blog_recent(5, 0)->result_array();
+        $data['count'] =  $this->Page_model->get_count_kategori();
+        $namakategori = $this->input->get('filter');
+        $kategori = $this->Page_model->getKategoriByName($namakategori);
+        $data['postingan'] = $this->Page_model->getBlogByKategori($kategori['id']);
+        $data['title'] = $kategori['kategori'];
+
+        $this->load->view('frontend/layouts/header', $data);
+        $this->load->view('frontend/kategori-blog');
+    }
+
     public function read($category, $slug)
     {
-        $category_id = $this->db->where('kategori', $category)->get('kategori_blog')->row_array()['id'];
         $data['home'] = $this->Setting_model->get_setting();
+        $category_id = $this->db->where('kategori', $category)->get('kategori_blog')->row_array()['id'];
         $data['setting'] = $this->Setting_model->get_setting();
         $data['seo'] = $this->db
             ->where('id_kategori', $category_id)

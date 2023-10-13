@@ -98,7 +98,7 @@
                 "url" => base_url('assets/frontend/img/blog/thumbnail/') . $seo['gambar']
             )
         ),
-        "headline" => $home['judul_website'],
+        "headline" => $setting['judul_website'],
         "image" => base_url('assets/frontend/img/blog/thumbnail/') . $seo['gambar'],
         "datePublished" => date('d/m/Y H:i', $seo['date_created']),
         "dateModified" => date('d/m/Y H:i', $seo['date_created'])
@@ -389,7 +389,7 @@
                                 </div>
                                 <ul class="list-none">
                                     <?php foreach ($count as $key) : ?>
-                                        <li><a href="#"><?= $key['kategori'] ?> <span class="f-right"><?= $key['total_blog'] ?></span></a></li>
+                                        <li><a href="<?= site_url('blog/kategori?filter=') . $key['kategori'] ?>"><?= $key['kategori'] ?> <span class="f-right"><?= $key['total_blog'] ?></span></a></li>
                                     <?php endforeach ?>
                                 </ul>
                             </div>
@@ -404,7 +404,7 @@
                                                 <!-- <a href="blog-details.html"><img src="assets/img/blog/post-1.jpg" alt="Post Img"></a> -->
                                                 <div class="post-content">
                                                     <h6 class="mb-10"><a href="<?= site_url('blog/' . $key['kategori'] . '/' . $key['slug']) ?>"><?= $key['title'] ?></a></h6>
-                                                    <span class="fs-14"><i class="fal fa-calendar-alt"></i> <?= date('d M Y', $seo['date_created']) ?></span>
+                                                    <span class="fs-14"><i class="fal fa-calendar-alt"></i> <?= date('d M Y', $key['date_created']) ?></span>
                                                 </div>
                                             </div>
                                         <?php endforeach ?>
