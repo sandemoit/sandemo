@@ -36,7 +36,7 @@
                     <div class="col-lg-4 col-md-6 grid-item <?= $key['role_id'] ?>">
                         <div class="team-wrapper mb-30">
                             <div class="team-thumb">
-                                <a href="team-details.html"><img class="img-fluid teamimage" src="<?= site_url('assets/img/profile/') . $key['image'] ?>" alt="Team Img"></a>
+                                <a href="#"><img class="img-fluid teamimage" src="<?= site_url('assets/img/profile/') . $key['image'] ?>" alt="Team Img"></a>
                             </div>
                             <div class="team-content">
                                 <h6><?= $key['role'] ?></h6>

@@ -258,18 +258,19 @@
         <nav class="side-mobile-menu">
             <ul id="mobile-menu-active">
                 <li><a href="<?= site_url('') ?>">Home</a></li>
-                <li><a href="contact.html">Tentang Kami</a></li>
+                <li><a href="<?= site_url('tentang-kami') ?>">Tentang Kami</a></li>
                 <li class="has-dropdown">
                     <a href="#" aria-expanded="false">Layanan</a>
                     <ul class="sub-menu mm-collapse" style="height: 0px;">
-                        <li><a href="team.html">Team</a></li>
+                        <li><a href="<?= site_url('web-development') ?>">Web Development</a></li>
+                        <li><a href="<?= site_url('redesign-web') ?>">Redesign Web</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Portofolio</a></li>
-                <li><a href="contact.html">Karir</a></li>
-                <li><a href="contact.html">Team</a></li>
-                <li><a href="contact.html">Blog</a></li>
-                <li><a href="contact.html">Kontak</a></li>
+                <li><a href="<?= site_url('portfolio') ?>">Portofolio</a></li>
+                <li><a href="<?= site_url('karir') ?>">Karir</a></li>
+                <li><a href="<?= site_url('team') ?>">Team</a></li>
+                <li><a href="<?= site_url('blog') ?>">Blog</a></li>
+                <li><a href="<?= site_url('kontak') ?>">Kontak</a></li>
             </ul>
         </nav>
         <!-- side-mobile-menu end -->
@@ -398,7 +399,7 @@
                                             <div class="blog-post mb-30">
                                                 <!-- <a href="blog-details.html"><img src="assets/img/blog/post-1.jpg" alt="Post Img"></a> -->
                                                 <div class="post-content">
-                                                    <h6 class="mb-10"><a href="blog-details.html"><?= $key['title'] ?></a></h6>
+                                                    <h6 class="mb-10"><a href="<?= site_url('blog/' . $key['kategori'] . '/' . $key['slug']) ?>"><?= $key['title'] ?></a></h6>
                                                     <span class="fs-14"><i class="fal fa-calendar-alt"></i> <?= date('d M Y', $seo['date_created']) ?></span>
                                                 </div>
                                             </div>
@@ -441,7 +442,7 @@
             <div class="row mb-15">
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay=".1s">
                     <div class="footer__widget mb-30">
-                        <h6 class="widget-title text-white pb-20 mb-35">About Company</h6>
+                        <h6 class="widget-title text-white pb-20 mb-35">PT. Sandemo Indo Teknologi</h6>
                         <p><?= $setting['about_website'] ?>
                         </p>
                         <div class="footer__social mt-30">
@@ -453,23 +454,23 @@
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay=".3s">
                     <div class="border-theme footer__widget mb-30 pl-135 pl-md-0 pl-xs-0">
-                        <h6 class="widget-title text-white pb-20 mb-35">Direct Link</h6>
+                        <h6 class="widget-title text-white pb-20 mb-35">Halaman</h6>
                         <ul class="fot-list">
-                            <li><a href="#">Business Planning</a></li>
-                            <li><a href="#">Tax Strategy</a></li>
-                            <li><a href="#">Financial Advices</a></li>
-                            <li><a href="#">Insurance Strategy</a></li>
-                            <li><a href="#">Manage Investment</a></li>
+                            <li><a href="https://shopee.co.id/sandemo.id">Shopee</a></li>
+                            <li><a href="https://members.phpmu.com/sandi">PHPMu</a></li>
+                            <li><a href="https://www.fiverr.com/sandemoit">Fiverr</a></li>
+                            <li><a href="https://www.freelancer.co.id/u/sandimaulidika">Freelancer ID</a></li>
+                            <li><a href="https://fastwork.id/user/sandemo">Fastwork</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay=".5s">
                     <div class="footer__widget mb-25 pl-25 pl-md-0 pl-xs-0">
-                        <h6 class="widget-title text-white pb-20 mb-35">Get In Touch</h6>
+                        <h6 class="widget-title text-white pb-20 mb-35">Informasi Kontak</h6>
                         <ul class="fot-list fot-list-1">
                             <li><a href="tel:<?= $setting['nohp'] ?>"><?= $setting['nohp'] ?></a></li>
                             <li><a href="mailto:<?= $setting['gmail'] ?>"><?= $setting['gmail'] ?></a></li>
-                            <li><a href="#">Jam Kerja: <span>8AM - 11PM</span></a>
+                            <li><a href="#">Jam Kerja: <span>8AM - 9PM</span></a>
                             </li>
                             <li>
                                 <a target="_blank" href="https://maps.app.goo.gl/rk9pHxsqfpaXAWFW9"><?= $setting['alamat'] ?></a>
