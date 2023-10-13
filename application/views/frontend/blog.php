@@ -48,6 +48,20 @@
                     </div>
                 </div>
             </div>
+            <div class="row justify-content-center mb-30 mt-20">
+                <div class="col-lg-6">
+                    <div class="page-navigation">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#"><i class="fal fa-chevron-double-left"></i></a></li>
+                            <li class="page-item"><a class="page-link" href="#">01</a></li>
+                            <li class="page-item"><a class="page-link" href="#">02</a></li>
+                            <li class="page-item"><a class="page-link" href="#"><i class="fal fa-ellipsis-h"></i></a></li>
+                            <li class="page-item"><a class="page-link" href="#">06</a></li>
+                            <li class="page-item"><a class="page-link" href="#"><i class="fal fa-chevron-double-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </main>

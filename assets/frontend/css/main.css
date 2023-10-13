@@ -4335,10 +4335,6 @@ input.main-search-input:-ms-input-placeholder {
       width: 894px; 
       height: 382px;
       object-fit: cover;}
-      @media (max-width: 992px) {
-        .img-fluid {
-          max-width: 100%;
-          height: auto;  } }
       @media (max-width: 768px) {
         .img-fluid {
           max-width: 100%;

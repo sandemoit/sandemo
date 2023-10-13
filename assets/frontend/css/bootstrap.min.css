@@ -145,7 +145,7 @@ address {
     line-height: inherit;
 }
 ol,
-ul {
+ul:not(.pagination) {
     padding-left: 2rem;
 }
 dl,
@@ -4281,7 +4281,6 @@ fieldset:disabled .btn {
 }
 .pagination {
     display: flex;
-    padding-left: 0;
     list-style: none;
 }
 .page-link {
@@ -6348,16 +6347,6 @@ fieldset:disabled .btn {
 .order-last {
     order: 6 !important;
 }
-
-/* @media only screen and (min-width: 992px) and (max-width: 1200px) {
-.home-4 .container .tag {
-    top: 42%; } }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-.home-4 .container .tag {
-    top: 48%; } }
-@media (max-width: 767px) {
-.home-4 .container .tag {
-    top: 48%; } } */
 
 .m-0 {
     margin: 0 !important;
