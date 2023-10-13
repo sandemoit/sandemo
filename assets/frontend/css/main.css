@@ -179,6 +179,11 @@ p {
     font-size: 33px;
     margin-bottom: 20px;
   }
+  @media (max-width: 768px) {
+    .artikel-title {
+      font-size: 22px;
+      margin-bottom: 20px; }
+  }
 
 hr {
   border-bottom: 1px solid rgba(27, 33, 47, 0.1);
