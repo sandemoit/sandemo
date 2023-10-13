@@ -135,11 +135,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-12">
+                <!-- <div class="col-lg-6 col-md">
                     <div class="video-wrapper">
-                        <!-- <a href="https://www.youtube.com/watch?v=yeZpJ6lJC54" class="popup-video"><i class="fas fa-play"></i></a> -->
+                        <a href="https://www.youtube.com/watch?v=yeZpJ6lJC54" class="popup-video"><i class="fas fa-play"></i></a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
