@@ -5,7 +5,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp2 animated" data-wow-delay=".1s">
                 <div class="footer__widget mb-30">
                     <h6 class="widget-title text-white pb-20 mb-35">PT. Sandemo Indo Teknologi</h6>
-                    <p><?= $setting['about_website'] ?>
+                    <p><?= $setting['about_hf'] ?>
                     </p>
                     <div class="footer__social mt-30">
                         <a href="https://www.facebook.com/<?= $setting['facebook'] ?>"><i class="fab fa-facebook-f"></i></a>

@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/nice-select.css" />
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/spacing.css" />
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/main.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/custom.css" />
 
 </head>
 

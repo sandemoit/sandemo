@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/metisMenu.css" />
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/nice-select.css" />
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/spacing.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/custom.css" />
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/main.css" />
     <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/frontend/') ?>img/favicons/favicon.ico" />
 
@@ -33,8 +34,8 @@
     <meta property="og:locale" content="id_ID">
     <meta property="og:description" content="<?= character_limiter($seo['meta']) ?>">
     <meta property="og:url" content="<?= current_url(); ?>">
-    <meta property="og:image" content="<?= base_url('assets/frontend/img/favicons/logo.png') ?>">
-    <meta property="og:image:secure_url" content="<?= base_url('assets/frontend/img/favicons/logo.png') ?>">
+    <meta property="og:image" content="<?= base_url('assets/frontend/img/blog/thumbnail/') . $seo['gambar'] ?>">
+    <meta property="og:image:secure_url" content="<?= base_url('assets/frontend/img/blog/thumbnail') . $seo['gambar'] ?>">
     <meta property="article:author" content="<?= $seo['author'] ?>">
     <meta property="article:published_time" content="<?= date('d/m/Y H:i', $seo['date_created']) ?>">
     <meta property="article:modified_time" content="<?= date('d/m/Y H:i', $seo['date_created']) ?>">
@@ -57,10 +58,22 @@
         "itemListElement" => array(
             array(
                 "@type" => "ListItem",
+                "position" => 1, // Ganti dengan posisi yang sesuai
+                "name" => "Blog",
+                "item" => "https://sandemoindoteknologi.co.id/" . $pertama . '/' // Ganti dengan URL yang sesuai
+            ),
+            array(
+                "@type" => "ListItem",
                 "position" => 2, // Ganti dengan posisi yang sesuai
-                "name" => $pertama,
+                "name" => $kedua,
+                "item" => "https://sandemoindoteknologi.co.id/" . $pertama . '/' . $kedua . '/' // Ganti dengan URL yang sesuai
+            ),
+            array(
+                "@type" => "ListItem",
+                "position" => 3, // Ganti dengan posisi yang sesuai
+                "name" => $title,
                 "item" => "https://sandemoindoteknologi.co.id/" . $pertama . '/' . $kedua . '/' . $ketiga // Ganti dengan URL yang sesuai
-            )
+            ),
         )
     );
     // Konversi data JSON-LD menjadi format JSON
@@ -286,8 +299,11 @@
                     <div class="col-lg-12">
                         <div class="page-title-wrapper pt-lg-100 pt-md-90 pt-xs-80" style="text-align: center;">
                             <ul class="breadcrumb">
-                                <li><a href="<?= site_url('/') ?>">Home </a></li> <i class="breadpanah fas fa-chevron-right"></i>
+                                <li><a href="<?= site_url('/') ?>">Home </a></li>
+                                <i class="breadpanah fas fa-chevron-right"></i>
                                 <li><a href="<?= site_url('blog') ?>">Blog </a></li>
+                                <i class="breadpanah fas fa-chevron-right"></i>
+                                <li class="active" aria-current="page"> <?= $kedua = $this->uri->segment(2, 0); ?></li>
                             </ul>
                         </div>
                     </div>

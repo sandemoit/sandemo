@@ -58,7 +58,6 @@ $route['translate_uri_dashes'] = FALSE;
 $route['tentang-kami'] = 'about';
 
 // blog 
-$route['blog'] = 'blog';
 $route['blog/share'] = 'blog/sharePost';
 $route['blog/(:any)/(:any)'] = 'blog/read/$1/$2';
 

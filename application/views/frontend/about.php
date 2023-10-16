@@ -32,7 +32,7 @@
                         <div class="section-title">
                             <h6 class="semi-title mb-10">About Us</h6>
                             <h2 class="sect-title">Jam terbang Sandemo IT dimulai tahun 2019 hingga saat ini.</h2>
-                            <p class="paragraph-title"><strong>Sandemo IT</strong> adalah perusahaan yang bergerak pada bidang Digital Agency. Saat ini telah dipercayai memegang berbagai project dari Perusahaan, UMKM, serta Kolaborasi dengan berbagai Partner.
+                            <p class="paragraph-title"><?= $setting['about_website'] ?>
                             </p>
                         </div>
                         <ul class="btn-list about-btn d-md-flex align-items-center">

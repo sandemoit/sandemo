@@ -15,7 +15,7 @@
                                         #1 Layanan Website
                                         <span class="bottom-shape">Terbaik</span>
                                     </h1>
-                                    <p><?= $setting['about_website'] ?></p>
+                                    <p><?= $setting['about_hf'] ?></p>
                                     <ul class="btn-list d-md-flex align-items-center mt-25">
                                         <li><a class="theme_btn mr-30" href="tel:<?= $setting['nohp'] ?>"><i class="fas fa-phone-alt mr-10"></i> Hubungi Kami</a></li>
                                         <li><a target="_blank" class="theme_btn border_btn" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20bisa%20bantu%20untuk%20menjelaskan%20terkait%20layanan."><i class="fab fa-whatsapp mr-10"></i> Chat WhatsApp</a></li>
@@ -106,9 +106,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="brand-active owl-carousel">
-                        <div class="brand-item">
-                            <a class="brand-image" href="#"><img src="<?= base_url('assets/frontend/img/brand/') ?>" alt="Brand Logo"></a>
-                        </div>
+                        <?php foreach ($brand as $key) : ?>
+                            <div class="brand-item">
+                                <a class="brand-image" href="#"><img src="<?= base_url('assets/frontend/img/brand/') . $key['image'] ?>" alt="Brand Logo"></a>
+                            </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
             </div>

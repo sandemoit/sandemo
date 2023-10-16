@@ -8,11 +8,82 @@ class Blog extends CI_Controller
         parent::__construct();
         $this->load->model('Page_model');
         $this->load->model('Setting_model');
+        $this->load->model('Blog_model', 'blog');
     }
 
     public function index()
     {
+        $config['base_url'] = site_url('/blog/page');
+        $config['total_rows'] = $this->blog->countAllBlog();
+        $config['per_page'] = 5;
+        $config['uri_segment'] = 3;
+        $config['num_links'] = 3;
+
+        // customsize
+        $config['full_tag_open'] = '<div class="page-navigation"><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></div>';
+
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li class="page-item">';
+        $config['next_tag_close'] = '</li>';
+
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="page-item">';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+
+        $config['attributes'] = array('class' => 'page-link');
+
+        $this->pagination->initialize($config);
+        $limit = $config['per_page'];
+        $offset = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
         $data['blog'] = $this->Page_model->get_blog(5, 0);
+        $data['setting'] = $this->Setting_model->get_setting();
+        $data['title'] = 'Blog';
+
+        $this->load->view('frontend/layouts/header', $data);
+        $this->load->view('frontend/blog');
+        $this->load->view('frontend/layouts/footer', $data);
+    }
+    public function page()
+    {
+        $config['base_url'] = site_url('/blog/page');
+        $config['total_rows'] = $this->blog->countAllBlog();
+        $config['per_page'] = 5;
+        $config['uri_segment'] = 3;
+        $config['num_links'] = 3;
+
+        // customsize
+        $config['full_tag_open'] = '<div class="page-navigation"><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></div>';
+
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li class="page-item">';
+        $config['next_tag_close'] = '</li>';
+
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li class="page-item">';
+        $config['prev_tag_close'] = '</li>';
+
+        $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link" href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+
+        $config['num_tag_open'] = '<li class="page-item">';
+        $config['num_tag_close'] = '</li>';
+
+        $config['attributes'] = array('class' => 'page-link');
+
+        $this->pagination->initialize($config);
+        $limit = $config['per_page'];
+        $offset = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
+        $data['blog'] = $this->Page_model->get_blog($limit, $offset);
         $data['setting'] = $this->Setting_model->get_setting();
         $data['title'] = 'Blog';
 
