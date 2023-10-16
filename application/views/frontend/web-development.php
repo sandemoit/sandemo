@@ -34,7 +34,7 @@
                 <div class="col-lg-6">
                     <div class="about-img-wrapper pos-rel mb-30">
                         <img class="shape-square" src="<?= base_url('assets/frontend/img/shape/square-1.png') ?>" alt="Shape">
-                        <img class="img-fluid" src="<?= base_url('assets/frontend/img/services/web.webp') ?>" alt="About Img">
+                        <img class="img-fluid" src="<?= base_url('assets/frontend/img/services/web.webp') ?>" alt="Jasa Web Development Terbaik dan Professional">
                     </div>
                 </div>
             </div>

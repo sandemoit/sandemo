@@ -24,7 +24,7 @@
                             </div>
                             <div class="col-xl-6 col-lg-6">
                                 <div class="slider-right">
-                                    <img class="img-fluid" src="<?= base_url('assets/frontend/') ?>img/slider/image-slide.webp" alt="Hero Img">
+                                    <img class="img-fluid" src="<?= base_url('assets/frontend/') ?>img/slider/image-slide.webp" alt="Website Image">
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                 <?php foreach ($portofolio as $key) : ?>
                     <div class="col-lg-4 col-md-6 col-sm-6 grid-item cat3 cat4">
                         <div class="portfolio-wrapper2 pf-mason mb-30">
-                            <img class="img-fluid" src="<?= base_url('assets/frontend/img/portfolio/') . $key['image'] ?>" alt="Portfolio Img">
+                            <img class="img-fluid" src="<?= base_url('assets/frontend/img/portfolio/') . $key['image'] ?>" alt="<?= $key['title'] ?>">
                             <div class="single-portfolio">
                                 <h4 class="portfolio-title text-white"><?= $key['title'] ?></h4>
                                 <p><?= $key['client'] ?></p>
@@ -108,7 +108,7 @@
                     <div class="brand-active owl-carousel">
                         <?php foreach ($brand as $key) : ?>
                             <div class="brand-item">
-                                <a class="brand-image" href="#"><img src="<?= base_url('assets/frontend/img/brand/') . $key['image'] ?>" alt="Brand Logo"></a>
+                                <a class="brand-image" href="javascript:;"><img src="<?= base_url('assets/frontend/img/brand/') . $key['image'] ?>" alt="<?= $key['brand_name'] ?>"></a>
                             </div>
                         <?php endforeach ?>
                     </div>
@@ -180,7 +180,7 @@
                         <div class="blogs mb-30">
                             <div class="blogs__thumb mb-35">
                                 <a href="<?= site_url('blog/' . $key['kategori'] . '/' . $key['slug']) ?>">
-                                    <img src="<?= base_url('assets/frontend/img/blog/thumbnail/') . $key['gambar'] ?>" alt="Blog Img" class="blog-image">
+                                    <img src="<?= base_url('assets/frontend/img/blog/thumbnail/') . $key['gambar'] ?>" alt="<?= $key['title'] ?>" class="blog-image">
                                 </a>
                             </div>
                             <span class="tag"><?= $key['kategori'] ?></span>

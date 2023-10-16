@@ -35,7 +35,7 @@
                 <?php foreach ($portfolio as $key) : ?>
                     <div class="col-lg-4 col-md-6 col-sm-6 grid-item <?= $key['kategori'] ?>">
                         <div class="portfolio-wrapper2 pf-mason mb-30">
-                            <img class="img-fluid" src="<?= base_url('assets/frontend/img/portfolio/') . $key['image'] ?>" alt="Portfolio Img">
+                            <img class="img-fluid" src="<?= base_url('assets/frontend/img/portfolio/') . $key['image'] ?>" alt="<?= $key['title'] ?>">
                             <div class="single-portfolio">
                                 <p><?= $key['client'] ?></p>
                                 <h4 class="portfolio-title text-white"><?= $key['title'] ?></h4>
@@ -72,9 +72,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="brand-active owl-carousel">
-                        <div class="brand-item">
-                            <a class="brand-image" href="#"><img src="<?= base_url('assets/frontend/img/brand/') ?>" alt="Brand Logo"></a>
-                        </div>
+                        <?php foreach ($brand as $key) : ?>
+                            <div class="brand-item">
+                                <a class="brand-image" href="javascript:;"><img src="<?= base_url('assets/frontend/img/brand/') . $key['image'] ?>" alt="<?= $key['brand_name'] ?>"></a>
+                            </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
             </div>

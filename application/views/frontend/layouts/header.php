@@ -24,7 +24,7 @@
     <meta name="author" content="Sandi Maulidika">
     <meta name="google-site-verification" content="60PhvPIn1NQaQGJnkEPjulzNIhr5ik7R37hC3HjoNug" />
     <meta name="copyright" content="<?= $setting['judul_website'] ?>">
-    <meta property="og:title" content="<?= $setting['judul_website'] . " - " . $setting['slogan_website'] ?>">
+    <meta property="og:title" content="<?= $title . " - " . $setting['judul_website'] ?>">
     <meta property="og:description" content="<?= $setting['about_website'] ?>">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
@@ -143,7 +143,7 @@
                         <div class="row align-items-center">
                             <div class="col-xl-2 col-lg-2 col-6">
                                 <div class="logo-area pt-30 mb-30">
-                                    <a class="main-logo" href="<?= site_url('') ?>"><img src="<?= base_url('assets/frontend/') ?>img/logo/sandemo.png" alt="Header-logo"></a>
+                                    <a class="main-logo" href="<?= site_url('') ?>"><img src="<?= base_url('assets/frontend/') ?>img/logo/sandemo.webp" alt="Logo Sandemo IT - <?= $title ?>"></a>
                                 </div>
                             </div>
                             <div class="col-xl-8 col-lg-7 col-6 text-center d-none d-lg-block">
