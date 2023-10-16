@@ -6,23 +6,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title><?= $title ?> - <?= $setting['slogan_website'] ?></title>
 
-    <!-- CSS here -->
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/animate.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/magnific-popup.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/all.min.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/gt-font.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/metisMenu.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/nice-select.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/spacing.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/custom.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/main.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/frontend/') ?>img/favicons/favicon.ico" />
-
     <!-- meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="PT Sandemo Indo Teknologi is a leading and experienced company in Palembang in software engineering development.">
     <meta name="keywords" content="PT. Sandemo Indo Teknologi, Sandemo Indo Teknologi, Sandemo Indo, Sandemo Jasa Pembuatan Website Profesional Palembang, Digital Marketing, Layanan Digital Marketing, Jasa Pembuatan Website Profesional Palembang, Jasa Website Palembang, Jasa Web Murah, Web Promotion, Jasa Maintenance Website,jasa perbaikan website,jasa desain website, Jasa Pembuatan Logo, Jasa Company Profile, Brand Identity Design, Web Portal Berita, Web Sekolah, Web Personal, Jasa Web Professional, Creative Digital, Startup, Jasa Sosial Media Management, Facebook Ads,jasa seo palembang, jasa pembuatan website, perbaikan web, Jasa Pembuatan Website Profesional Palembang, jasa web palembang, desain website palembang">
 
     <!-- <meta name="Googlebot" content="noindex"> -->
@@ -147,6 +132,21 @@
         })(window, document, 'script', 'dataLayer', 'GTM-5H7DNKN');
     </script>
     <!-- End Google Tag Manager -->
+
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/animate.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/magnific-popup.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/all.min.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/gt-font.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/metisMenu.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/nice-select.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/spacing.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/custom.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/main.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/frontend/') ?>img/favicons/favicon.ico" />
 </head>
 
 <body>

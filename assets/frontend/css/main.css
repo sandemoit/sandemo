@@ -51,7 +51,7 @@ body {
   line-height: 25px;
   font-weight: 400;
   font-style: normal;
-  /* color: #777777; */
+  color: #212529;
 }
 
 .f-left {
@@ -3013,9 +3013,11 @@ input.main-search-input:-ms-input-placeholder {
 .contact-area.home-4.home-4_onepage {
   background: none; }
 
-.custom-container-slider {
-  max-width: 1430px;
-  overflow: hidden; }
+@media screen and (max-width: 600px) {
+    .custom-container-slider {
+      max-width: 1430px;
+      overflow: hidden;
+  } }
 
 .main-slider {
   position: relative;
@@ -8094,6 +8096,7 @@ input.main-search-input:-ms-input-placeholder {
       .blogs .tag {
         top: 48%; } }
   .blogs__meta span {
+    color: #000;
     font-size: 14px; }
     .blogs__meta span.author {
       color: #083d59;
