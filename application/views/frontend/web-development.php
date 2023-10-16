@@ -452,7 +452,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="plan plan3 mb-30">
                         <div class="plan-body">
-                            <h4 class="plan-title text-white">Paket Business Pro</h4>
+                            <h4 class="plan-title text-white">Paket Corporate Hyper</h4>
                             <p><s>Rp. 70.000.000</s></p>
                             <h2>Rp. 50.999.000</h2>
                             <ul class="plan-list">
