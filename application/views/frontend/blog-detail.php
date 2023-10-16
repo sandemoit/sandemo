@@ -29,7 +29,7 @@
     <meta name="google-site-verification" content="60PhvPIn1NQaQGJnkEPjulzNIhr5ik7R37hC3HjoNug" />
     <meta name="author" content="Sandi Maulidika">
     <meta name="copyright" content="<?= $setting['judul_website'] ?>">
-    <meta property="og:title" content="<?= $title ?> - <?= $setting['slogan_website'] ?>">
+    <meta property="og:title" content="<?= $title ?>">
     <meta property="og:type" content="blog">
     <meta property="og:locale" content="id_ID">
     <meta property="og:description" content="<?= character_limiter($seo['meta']) ?>">
