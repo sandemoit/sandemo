@@ -102,7 +102,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="plan mb-30">
                         <div class="plan-body">
-                            <h4 class="plan-title">Paket Landing Page</h4>
+                            <h4 class="plan-title">Paket Super Hemat</h4>
                             <p><s>Rp. 4.000.000</s></p>
                             <h2>Rp. 2.199.000</h2>
                             <ul class="plan-list">
@@ -113,12 +113,12 @@
                                 <li>7 GB Space</li>
                                 <li>Design Website Premium</li>
                                 <li>Responsive Design</li>
-                                <li>1 Halaman Website</li>
+                                <li>5 Halaman Website</li>
                                 <li>Unlimited Email Bisnis</li>
                                 <li>2 Kali Revisi</li>
                                 <li>Optimasi Website</li>
                                 <li>Optimasi Search Engine Google</li>
-                                <li>Whatsapp Chat </li>
+                                <li>Whatsapp Chat</li>
                                 <li>1 Design Banner Website</li>
                                 <li class="delete">Halaman Blog Premium</li>
                             </ul>
