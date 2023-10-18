@@ -109,6 +109,7 @@
                                 <li>Akses ke Cpanel</li>
                                 <li>Gratis Domain</li>
                                 <li>Gratis SSL Security</li>
+                                <li>DDoS Protection</li>
                                 <li>7 GB Space</li>
                                 <li>Design Website Premium</li>
                                 <li>Responsive Design</li>
@@ -142,6 +143,7 @@
                                 <li>Akses ke Cpanel</li>
                                 <li>Gratis Domain</li>
                                 <li>Gratis SSL Security</li>
+                                <li>DDoS Protection</li>
                                 <li>13 GB Space</li>
                                 <li>Design Website Premium</li>
                                 <li>Responsive Design</li>
@@ -174,6 +176,7 @@
                                 <li>Akses ke Cpanel</li>
                                 <li>Gratis Domain</li>
                                 <li>Gratis SSL Security</li>
+                                <li>DDoS Protection</li>
                                 <li>25 GB Space</li>
                                 <li>Design Website Premium</li>
                                 <li>Responsive Design</li>
@@ -209,6 +212,7 @@
                                 <li>Akses ke Cpanel</li>
                                 <li>Gratis Domain</li>
                                 <li>Gratis SSL Security</li>
+                                <li>DDoS Protection</li>
                                 <li>35 GB Space</li>
                                 <li>Design Website Premium</li>
                                 <li>Responsive Design</li>
@@ -259,6 +263,7 @@
                                 <li>Akses ke Cpanel</li>
                                 <li>Gratis Domain</li>
                                 <li>Gratis SSL Security</li>
+                                <li>DDoS Protection</li>
                                 <li>40 GB Space</li>
                                 <li>Design Website Premium</li>
                                 <li>Responsive Design</li>
@@ -308,6 +313,7 @@
                                 <li>Akses ke Cpanel</li>
                                 <li>Gratis Domain</li>
                                 <li>Gratis SSL Security</li>
+                                <li>DDoS Protection</li>
                                 <li>60 GB Space</li>
                                 <li>Design Website Premium</li>
                                 <li>Responsive Design</li>
@@ -360,6 +366,7 @@
                                 <li>Akses ke Cpanel</li>
                                 <li>Gratis Domain</li>
                                 <li>Gratis SSL Security</li>
+                                <li>DDoS Protection</li>
                                 <li>80 GB Space</li>
                                 <li>Design Website Premium</li>
                                 <li>Responsive Design</li>
@@ -410,6 +417,7 @@
                                 <li>Akses ke Cpanel</li>
                                 <li>Gratis Domain</li>
                                 <li>Gratis SSL Security</li>
+                                <li>DDoS Protection</li>
                                 <li>140 GB Space</li>
                                 <li>Design Website Premium</li>
                                 <li>Responsive Design</li>
@@ -459,6 +467,7 @@
                                 <li>Akses ke Cpanel</li>
                                 <li>Gratis Domain</li>
                                 <li>Gratis SSL Security</li>
+                                <li>DDoS Protection</li>
                                 <li>200 GB Space</li>
                                 <li>Design Website Premium</li>
                                 <li>Responsive Design</li>
