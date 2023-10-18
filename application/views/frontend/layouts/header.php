@@ -29,7 +29,12 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
     <meta property="og:url" content="<?= current_url(); ?>">
-    <meta property="og:image" content="<?= base_url('assets/frontend/img/favicons/logo.png') ?>">
+    <?php if ($this->uri->segment(1) == '') {
+        echo '<meta property="og:image" content="' . base_url('/assets/frontend/img/favicons/logo.png') . '">';
+    } else {
+        echo '<meta property="og:image" content="' . base_url('/assets/frontend/img/service/web.webp') . '">';
+    } ?>
+
     <meta property="og:image:secure_url" content="<?= base_url('assets/frontend/img/favicons/logo.png') ?>">
     <meta property="article:section" content="Technology">
     <meta property="article:tag" content="Web Development">
