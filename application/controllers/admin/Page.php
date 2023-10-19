@@ -444,10 +444,11 @@ class Page extends CI_Controller
     {
         $integrasi = $this->Setting_model->integrasi();
         $key = $integrasi['wagw'];
+        $url = $integrasi['url_api'];
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => $integrasi['url_api'],
+            CURLOPT_URL => $url,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,

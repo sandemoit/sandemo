@@ -18,6 +18,7 @@
     <link href="<?= base_url('assets'); ?>/node_modules/toast-master/css/jquery.toast.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="<?= base_url('assets'); ?>/css/style.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets'); ?>/css/style.css" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
     <link href="<?= base_url('assets'); ?>/css/pages/dashboard1.css" rel="stylesheet">
     <!-- CSS Here -->

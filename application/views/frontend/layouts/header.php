@@ -2,6 +2,7 @@
 <html class="no-js" lang="en">
 
 <head>
+    <!-- Primary Meta Tags -->
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <?php
@@ -12,13 +13,20 @@
     }
     ?>
 
-    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/frontend/') ?>img/favicons/favicon.ico" />
+    <?php
+    if ($this->uri->segment(1) == '') {
+        echo '<meta name="title" content="' . $title . ' - ' . $setting['slogan_website'] . '" />';
+    } else {
+        echo '<meta name="title" content="' . $title . ' - ' . $setting['judul_website'] . '" />';
+    }
+    ?>
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Sandemo IT merupakan penyedia layanan teknologi informasi seperti jasa pembuatan website, jasa redesain web, jasa SEO, jasa pembuatan aplikasi web dan lainnya.">
     <meta name="keywords" content="PT. Sandemo Indo Teknologi, Sandemo, Sandemo IT, Sandemo Indo Teknologi, Sandemo Indo, Sandemo Jasa Pembuatan Website Profesional Palembang, Digital Marketing, Layanan Digital Marketing, Jasa Pembuatan Website Profesional Palembang, Jasa Website Palembang, Jasa Web Murah, Web Promotion, Jasa Maintenance Website,jasa perbaikan website,jasa desain website, Jasa Pembuatan Logo, Jasa Company Profile, Brand Identity Design, Web Portal Berita, Web Sekolah, Web Personal, Jasa Web Professional, Creative Digital, Startup, Jasa Sosial Media Management, Facebook Ads,jasa seo palembang, jasa pembuatan website, perbaikan web, Jasa Pembuatan Website Profesional Palembang, jasa web palembang, desain website palembang">
 
-    <!-- meta -->
-    <!-- <meta name="Googlebot" content="noindex, follow"> -->
+    <!-- Open Graph / Facebook -->
+    <meta name="robots" content="index, follow">
     <meta name="author" content="Sandi Maulidika">
     <meta name="google-site-verification" content="60PhvPIn1NQaQGJnkEPjulzNIhr5ik7R37hC3HjoNug" />
     <meta name="copyright" content="<?= $setting['judul_website'] ?>">
@@ -27,16 +35,11 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
     <meta property="og:url" content="<?= current_url(); ?>">
-    <?php if ($this->uri->segment(1) == '') {
-        echo '<meta property="og:image" content="' . base_url('/assets/frontend/img/favicons/logo.png') . '">';
-    } else {
-        echo '<meta property="og:image" content="' . base_url('/assets/frontend/img/service/web.webp') . '">';
-    } ?>
-
-    <meta property="og:image:secure_url" content="<?= base_url('assets/frontend/img/favicons/logo.png') ?>">
+    <meta property="og:image" content="<?= base_url('assets/frontend/img/service/web.webp') ?>">
+    <meta property="og:image:secure_url" content="<?= base_url('assets/frontend/img/service/web.webp') ?>">
     <meta property="article:section" content="Technology">
     <meta property="article:tag" content="Web Development">
-    <link rel="canonical" href="https://sandemoindoteknologi.co.id/">
+    <link rel="canonical" href="<?= current_url(); ?>">
 
     <!-- CSS here -->
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/bootstrap.min.css" />
@@ -50,12 +53,10 @@
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/spacing.css" />
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/main.css" />
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/custom.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/frontend/') ?>img/favicons/favicon.ico" />
 
     <!-- breadcrumb -->
     <?php
-    $totalSegments = $this->uri->total_segments();
-    // Mendapatkan nama link terakhir
-    $lastSegment = $this->uri->segment($totalSegments);
 
     // Membuat data JSON-LD
     $jsonLDData = array(
@@ -66,7 +67,7 @@
                 "@type" => "ListItem",
                 "position" => 1, // Ganti dengan posisi yang sesuai
                 "name" => $title,
-                "item" => "https://sandemoindoteknologi.co.id/" . $lastSegment // Ganti dengan URL yang sesuai
+                "item" => current_url(), // Ganti dengan URL yang sesuai
             )
         )
     );

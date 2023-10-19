@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="keywords" content="PT. Sandemo Indo Teknologi, Sandemo Indo Teknologi, Sandemo Indo, Sandemo Jasa Pembuatan Website Profesional Palembang, Digital Marketing, Layanan Digital Marketing, Jasa Pembuatan Website Profesional Palembang, Jasa Website Palembang, Jasa Web Murah, Web Promotion, Jasa Maintenance Website,jasa perbaikan website,jasa desain website, Jasa Pembuatan Logo, Jasa Company Profile, Brand Identity Design, Web Portal Berita, Web Sekolah, Web Personal, Jasa Web Professional, Creative Digital, Startup, Jasa Sosial Media Management, Facebook Ads,jasa seo palembang, jasa pembuatan website, perbaikan web, Jasa Pembuatan Website Profesional Palembang, jasa web palembang, desain website palembang">
 
-    <!-- <meta name="Googlebot" content="noindex"> -->
+    <meta name="author" content="<?= $seo['author'] ?>">
+    <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="60PhvPIn1NQaQGJnkEPjulzNIhr5ik7R37hC3HjoNug" />
-    <meta name="author" content="Sandi Maulidika">
     <meta name="copyright" content="<?= $setting['judul_website'] ?>">
     <meta property="og:title" content="<?= $title ?>">
     <meta property="og:type" content="blog">
@@ -26,15 +26,12 @@
     <meta property="article:modified_time" content="<?= date('d/m/Y H:i', $seo['date_created']) ?>">
     <meta property="article:section" content="Technology">
     <meta property="article:tag" content="Web Development">
-    <link rel="canonical" href="https://sandemoindoteknologi.co.id/">
+    <link rel="canonical" href="<?= current_url(); ?>">
 
     <?php
-    // Mendapatkan total segmen URI
-
     // Mendapatkan nama link terakhir
     $pertama = $this->uri->segment(1, 0);
     $kedua = $this->uri->segment(2, 0);
-    $ketiga = $this->uri->segment(3, 0);
 
     // Membuat data JSON-LD
     $jsonLDData = array(
@@ -57,7 +54,7 @@
                 "@type" => "ListItem",
                 "position" => 3, // Ganti dengan posisi yang sesuai
                 "name" => $title,
-                "item" => "https://sandemoindoteknologi.co.id/" . $pertama . '/' . $kedua . '/' . $ketiga // Ganti dengan URL yang sesuai
+                "item" => current_url(), // Ganti dengan URL yang sesuai
             ),
         )
     );
@@ -66,23 +63,13 @@
     ?>
 
     <?php
-    // Mendapatkan total segmen URI
-    $pertama = $this->uri->segment(1, 0);
-    $kedua = $this->uri->segment(2, 0);
-    $ketiga = $this->uri->segment(3, 0);
-
-    $seluruhURL = $pertama . '/' . $kedua . '/' . $ketiga;
-
-    // Membuat URL dari segmen terakhir
-    $lastSegmentURL = base_url() . $seluruhURL;
-
     // Membuat data JSON-LD
     $jsonLDData = array(
         "@context" => "http://schema.org/",
         "@type" => "Article",
         "mainEntityOfPage" => array(
             "@type" => "WebPage",
-            "@id" => $lastSegmentURL // Menggunakan URL segmen terakhir
+            "@id" => current_url(), // Menggunakan URL segmen terakhir
         ),
         "author" => array(
             "@type" => "Organization",
