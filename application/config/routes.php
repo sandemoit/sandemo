@@ -70,3 +70,6 @@ $route['sitemap\.xml'] = "sitemap";
 
 // compro download
 $route['compro'] = "portfolio/compro";
+
+// free download
+$route['download'] = "subscriber/download";
