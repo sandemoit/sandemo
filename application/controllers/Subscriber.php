@@ -97,23 +97,22 @@ class Subscriber extends CI_Controller
         // PHPMailer object
         $mail = new PHPMailer(true);
         //Server settings
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->isSMTP();
-        $mail->Host     = EMAIL_HOST; //sesuaikan sesuai nama domain hosting/server yang digunakan
+        $mail->Host     = EMAIL_HOST;
         $mail->SMTPAuth = true;
-        $mail->Username = EMAIL_ALAMAT; // user email
-        $mail->Password = EMAIL_PASSWORD; // password email
-        $mail->SMTPSecure = 'ssl';
+        $mail->Username = EMAIL_ALAMAT;
+        $mail->Password = EMAIL_PASSWORD;
         $mail->Port     = EMAIL_PORT;
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Timeout = 30; // timeout pengiriman (dalam detik)
-        $mail->SMTPKeepAlive = true;
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 
         //Recipients
         $mail->setFrom(EMAIL_ALAMAT, EMAIL_NAMA);
         $mail->addAddress($penerima);     //Add a recipient
         $mail->addReplyTo('infosandemo@gmail.com', 'Information Sandemo IT');
 
-        //Attachments       //Add attachments
+        //Attachments
+        // $mail->addAttachment('/var/tmp/file.tar.gz');
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
@@ -122,7 +121,7 @@ class Subscriber extends CI_Controller
         <html xmlns="http://www.w3.org/1999/xhtml">
         
         <head>
-          <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+          <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Thank you for subscribing</title>
           <!--[if mso]><style type="text/css">body, table, td, a { font-family: Arial, Helvetica, sans-serif !important; }</style><![endif]-->
@@ -144,7 +143,7 @@ class Subscriber extends CI_Controller
                           </div>
                           <div style="padding: 20px; background-color: rgb(255, 255, 255);">
                             <div style="color: rgb(0, 0, 0); text-align: left;">
-                              <h1 style="margin: 1rem 0">Hai Para Pelanggan Setia Sandemo IT,</h1>
+                              <h1 style="margin: 1rem 0">Hai Para Pelanggan Setia Sandemo IT!</h1>
                               <p style="padding-bottom: 16px">Kami senang sekali melihat Anda bergabung dengan Sandemo IT Newsletter! Ini adalah tempat
                                 terbaik untuk mendapatkan berita teknologi terbaru, tips, dan penawaran khusus dari kami.</p>
                               <p style="padding-bottom: 16px">Dengan berlangganan newsletter kami, Anda akan selalu mendapatkan informasi terkini secara
@@ -153,7 +152,7 @@ class Subscriber extends CI_Controller
                                 siap mendengar Anda.</p>
                               <p style="padding-bottom: 16px">Terima kasih telah menjadi bagian dari komunitas Sandemo IT. Jangan lewatkan edisi
                                 newsletter berikutnya!</p>
-                              <p style="padding-bottom: 16px">Terima kasih,<br><em>Tim Sandemo IT</em></p>
+                              <p style="padding-bottom: 16px">Salam,<br><em>Tim Sandemo IT</em></p>
                             </div>
                           </div>
                           <div style="padding-top: 20px; color: rgb(153, 153, 153); text-align: center;">
