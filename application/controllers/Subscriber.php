@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+ob_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -7,117 +8,117 @@ use PHPMailer\PHPMailer\Exception;
 
 class Subscriber extends CI_Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
+  public function __construct()
+  {
+    parent::__construct();
 
-        $this->load->model('About_model');
-        $this->load->model('Setting_model');
-        $this->load->model('Signup_model');
+    $this->load->model('About_model');
+    $this->load->model('Setting_model');
+    $this->load->model('Signup_model');
+  }
+
+  public function index()
+  {
+    $this->form_validation->set_rules('email', 'Email', 'required');
+    $this->form_validation->set_rules('nama', 'Nama', 'required');
+
+    $email = $this->input->post('email', true);
+    $data = [
+      'email' => $email,
+      'nama' => $this->input->post('nama', true)
+    ];
+
+    if ($this->form_validation->run() == true) {
+      // Memeriksa apakah data tidak kosong
+      if (!empty($data)) {
+        $this->db->insert('subscriber', $data);
+        $this->send_email($email);
+
+        // Tampilkan pesan sukses dan kembali ke halaman utama
+        $this->session->set_flashdata('success', 'Data Anda berhasil didaftarkan!');
+      } else {
+        // Tampilkan pesan error jika data kosong
+        $this->session->set_flashdata('error', 'Data Anda gagal didaftarkan!');
+      }
+    } else {
+      $this->session->set_flashdata('warning', 'Data harus di isi semua!');
     }
+    redirect($_SERVER['HTTP_REFERER']);
+  }
 
-    public function index()
-    {
-        $this->form_validation->set_rules('email', 'Email', 'required');
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
+  public function download()
+  {
+    $data['pimpinan'] = $this->About_model->get_dataUser();
+    $data['brand'] = $this->Setting_model->get_brand();
+    $data['setting'] = $this->Setting_model->get_setting();
+    $data['title'] = 'Download file gratis';
 
-        $email = $this->input->post('email', true);
-        $data = [
-            'email' => $email,
-            'nama' => $this->input->post('nama', true)
-        ];
+    $this->form_validation->set_rules('name', 'Name', 'trim|required');
+    $this->form_validation->set_rules('whatsapp', 'Whatsapp', 'trim|required');
+    $this->form_validation->set_rules('email', 'email', 'trim|required');
 
-        if ($this->form_validation->run() == true) {
-            // Memeriksa apakah data tidak kosong
-            if (!empty($data)) {
-                $this->db->insert('subscriber', $data);
-                $this->send_email($email);
+    if ($this->form_validation->run() == false) {
+      $this->load->view('frontend/layouts/header', $data);
+      $this->load->view('frontend/download');
+      $this->load->view('frontend/layouts/footer');
+    } else {
+      $penerima = $this->input->post('email', true);
+      $name = $this->input->post('name', true);
+      $no_wa = $this->input->post('whatsapp', true);
+      $email = $this->input->post('email', true);
 
-                // Tampilkan pesan sukses dan kembali ke halaman utama
-                $this->session->set_flashdata('success', 'Data Anda berhasil didaftarkan!');
-            } else {
-                // Tampilkan pesan error jika data kosong
-                $this->session->set_flashdata('error', 'Data Anda gagal didaftarkan!');
-            }
-        } else {
-            $this->session->set_flashdata('warning', 'Data harus di isi semua!');
-        }
-        redirect($_SERVER['HTTP_REFERER']);
+      $subscriber = [
+        'email' => $email,
+        'nama' => $name,
+      ];
+
+      $no_wa = substr_replace($no_wa, '62', 0, 1); // mengubah "08" menjadi "62"
+      $no_wa = str_replace('-', '', $no_wa); // menghapus karakter "-" (opsional)
+
+      $save = [
+        'whatsapp' => $no_wa,
+        'email' => $penerima,
+        'name' => $name,
+        'subject' => 'Download file',
+        'pesan' => 'Download file',
+      ];
+
+      $this->db->insert('subscriber', $subscriber);
+      $this->db->insert('kontak', $save);
+
+      $this->send_email($penerima);
+
+      $this->session->set_flashdata('success', 'Silahkan cek email anda!');
+      redirect($_SERVER['HTTP_REFERER']);
     }
+  }
 
-    public function download()
-    {
-        $data['pimpinan'] = $this->About_model->get_dataUser();
-        $data['brand'] = $this->Setting_model->get_brand();
-        $data['setting'] = $this->Setting_model->get_setting();
-        $data['title'] = 'Download file gratis';
+  private function send_email($penerima)
+  {
+    // PHPMailer object
+    $mail = new PHPMailer(true);
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $mail->isSMTP();
+    $mail->Host     = EMAIL_HOST;
+    $mail->SMTPAuth = true;
+    $mail->Username = EMAIL_ALAMAT;
+    $mail->Password = EMAIL_PASSWORD;
+    $mail->Port     = EMAIL_PORT;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 
-        $this->form_validation->set_rules('name', 'Name', 'trim|required');
-        $this->form_validation->set_rules('whatsapp', 'Whatsapp', 'trim|required');
-        $this->form_validation->set_rules('email', 'email', 'trim|required');
+    //Recipients
+    $mail->setFrom(EMAIL_ALAMAT, EMAIL_NAMA);
+    $mail->addAddress($penerima);     //Add a recipient
+    $mail->addReplyTo('infosandemo@gmail.com', 'Information Sandemo IT');
 
-        if ($this->form_validation->run() == false) {
-            $this->load->view('frontend/layouts/header', $data);
-            $this->load->view('frontend/download');
-            $this->load->view('frontend/layouts/footer');
-        } else {
-            $penerima = $this->input->post('email', true);
-            $name = $this->input->post('name', true);
-            $no_wa = $this->input->post('whatsapp', true);
-            $email = $this->input->post('email', true);
+    //Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');
 
-            $subscriber = [
-                'email' => $email,
-                'nama' => $name,
-            ];
-
-            $no_wa = substr_replace($no_wa, '62', 0, 1); // mengubah "08" menjadi "62"
-            $no_wa = str_replace('-', '', $no_wa); // menghapus karakter "-" (opsional)
-
-            $save = [
-                'whatsapp' => $no_wa,
-                'email' => $penerima,
-                'name' => $name,
-                'subject' => 'Download file',
-                'pesan' => 'Download file',
-            ];
-
-            $this->db->insert('subscriber', $subscriber);
-            $this->db->insert('kontak', $save);
-
-            $this->send_email($penerima);
-
-            $this->session->set_flashdata('success', 'Silahkan cek email anda!');
-            redirect($_SERVER['HTTP_REFERER']);
-        }
-    }
-
-    private function send_email($penerima)
-    {
-        // PHPMailer object
-        $mail = new PHPMailer(true);
-        //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-        $mail->isSMTP();
-        $mail->Host     = EMAIL_HOST;
-        $mail->SMTPAuth = true;
-        $mail->Username = EMAIL_ALAMAT;
-        $mail->Password = EMAIL_PASSWORD;
-        $mail->Port     = EMAIL_PORT;
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-
-        //Recipients
-        $mail->setFrom(EMAIL_ALAMAT, EMAIL_NAMA);
-        $mail->addAddress($penerima);     //Add a recipient
-        $mail->addReplyTo('infosandemo@gmail.com', 'Information Sandemo IT');
-
-        //Attachments
-        // $mail->addAttachment('/var/tmp/file.tar.gz');
-
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Selamat Datang di Sandemo IT!';
-        $mail->Body    = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Selamat Datang di Sandemo IT!';
+    $mail->Body    = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
         
         <head>
@@ -172,14 +173,14 @@ class Subscriber extends CI_Controller
         
         </html>';
 
-        // Send email
-        if (!$mail->send()) {
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">'
-                . $mail->ErrorInfo . '</div>
+    // Send email
+    if (!$mail->send()) {
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">'
+        . $mail->ErrorInfo . '</div>
             ');
-            redirect($_SERVER['HTTP_REFERER']);
-        } else {
-            return true;
-        }
+      redirect($_SERVER['HTTP_REFERER']);
+    } else {
+      return true;
     }
+  }
 }

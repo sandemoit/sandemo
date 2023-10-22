@@ -105,7 +105,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button type="submit" class="form-btn form-btn2">Submit</button>
+                                            <button type="submit" class="form-btn form-btn2" id="submitBtn">Submit</button>
                                         </div>
                                     </form>
                                 </div>

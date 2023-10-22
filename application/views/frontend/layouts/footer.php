@@ -89,24 +89,6 @@
 <script src="<?= base_url('assets/frontend/') ?>js/plugins.js"></script>
 <script src="<?= base_url('assets/frontend/') ?>js/main.js"></script>
 
-<script>
-    $(document).ready(function() {
-        $('#submit-form').click(function() {
-            // Mengirim data form menggunakan AJAX
-            $.ajax({
-                type: 'POST',
-                url: '<?php echo base_url('kontak/sendwa'); ?>',
-                data: $('form').serialize(),
-                success: function() {
-                    // Membuka WhatsApp Web setelah data form terkirim
-                    window.open('<?php echo base_url('kontak/sendwa'); ?>', '_blank');
-                }
-            });
-            return false;
-        });
-    });
-</script>
-
 <!-- sweet alert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
@@ -136,6 +118,63 @@
             html: text,
         })
     <?php } ?>
+</script>
+<script>
+    document.ready(function() {
+        $('#submit-form').click(function() {
+            // Mengirim data form menggunakan AJAX
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo base_url("kontak/sendwa"); ?>',
+                data: $('form').serialize(),
+                success: function() {
+                    // Membuka WhatsApp Web setelah data form terkirim
+                    window.open('<?php echo base_url("kontak/sendwa"); ?>', '_blank');
+                }
+            });
+            return false;
+        });
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        const form = $(".contact-form");
+        const submitBtn = $("#submitBtn");
+
+        form.submit(function(event) {
+            event.preventDefault(); // Menghentikan form dari pengiriman normal
+
+            // Mengubah tampilan tombol submit
+            submitBtn.prop("disabled", true);
+            submitBtn.text("Loading...");
+            submitBtn.css("background-color", "#083d59");
+            submitBtn.css("cursor", "not-allowed");
+
+            // Mengirim form menggunakan AJAX
+            $.ajax({
+                type: form.attr("method"),
+                url: form.attr("action"),
+                data: form.serialize(),
+                success: function(response) {
+                    // Berhasil
+                    submitBtn.text("Sukses dikirim!");
+                    submitBtn.prop("disabled", true);
+                    submitBtn.css("background-color", "#083d59");
+                    submitBtn.css("cursor", "not-allowed");
+                },
+                error: function(xhr) {
+                    // Gagal
+                    submitBtn.text("Gagal dikirim!");
+                    setTimeout(function() {
+                        submitBtn.prop("disabled", false);
+                        submitBtn.text("Get File");
+                        submitBtn.css("background-color", "");
+                        submitBtn.css("cursor", "pointer");
+                    }, 3000);
+                },
+            });
+        });
+    });
 </script>
 
 </body>

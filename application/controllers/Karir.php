@@ -39,9 +39,7 @@ class Karir extends CI_Controller
             if ($isClosed) {
                 // Tampilkan pesan bahwa pendaftaran sudah ditutup
                 $data['title'] = 'Pendaftaran Ditutup';
-                $this->load->view('frontend/layouts/header', $data);
                 $this->load->view('errors/notfound_karir', $data);
-                $this->load->view('frontend/layouts/header', $data);
             } else {
                 $data['karir'] = $karir_details;
                 $data['title'] = $karir_details['name_job'];

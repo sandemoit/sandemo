@@ -62,7 +62,7 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <button type="submit" class="form-btn">Get File</button>
+                                    <button type="submit" class="form-btn" id="submitBtn">Get File</button>
                                 </div>
                             </form>
                         </div>

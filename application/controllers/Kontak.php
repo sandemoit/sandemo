@@ -8,148 +8,148 @@ use PHPMailer\PHPMailer\Exception;
 
 class Kontak extends CI_Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('Setting_model');
+  public function __construct()
+  {
+    parent::__construct();
+    $this->load->model('Setting_model');
+  }
+
+  public function index()
+  {
+    $data['home'] = $this->Setting_model->get_setting();
+    $data['setting'] = $this->Setting_model->get_setting();
+    $data['title'] = 'Kontak';
+
+    $this->load->view('frontend/layouts/header', $data);
+    $this->load->view('frontend/kontak');
+    $this->load->view('frontend/layouts/footer', $data);
+  }
+
+  public function send()
+  {
+    // validate form data
+    $this->form_validation->set_rules('name', 'Name', 'trim|required');
+    $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+    $this->form_validation->set_rules('whatsapp', 'WhatsApp', 'trim|required|numeric');
+    $this->form_validation->set_rules('subject', 'Subject', 'trim|required');
+    $this->form_validation->set_rules('pesan', 'Message', 'trim|required');
+
+    if ($this->form_validation->run() == FALSE) {
+      // handle form validation errors
+      $this->session->set_flashdata('error', validation_errors());
+      redirect('kontak');
+    } else {
+      $name = trim($this->input->post('name', true));
+      $email = trim($this->input->post('email', true));
+      $no_wa = trim($this->input->post('whatsapp', true));
+      $subject = trim($this->input->post('subject', true));
+      $pesan = trim($this->input->post('pesan', true));
+
+      $no_wa = substr_replace($no_wa, '62', 0, 1); // mengubah "08" menjadi "62"
+      $no_wa = str_replace('-', '', $no_wa); // menghapus karakter "-" (opsional)
+
+      // insert db kontak
+      $save = [
+        'name' => $name,
+        'email' => $email,
+        'whatsapp' => $no_wa,
+        'subject' => $subject,
+        'pesan' => $pesan,
+        'aksi' => 0
+      ];
+      // insert db subscriber
+      $sub = [
+        'nama' => $name,
+        'email' => $email
+      ];
+      $this->db->insert('kontak', $save);
+
+      // insert db subscriber email
+      $this->load->model('Signup_model');
+      $this->db->insert('subscriber', $sub);
+
+      // send message using cURL
+      $response = $this->send_message($no_wa, "Terima kasih $name telah membicarakan proyek kepada kami. Kami sangat berharap dapat bekerja sama dengan Anda dalam mewujudkan proyek ini. Silakan tunggu balasan dari tim support kami untuk langkah selanjutnya.\n\n-sit");
+      $this->send_email($email, $subject);
+
+      // handle cURL response
+      if (strpos($response, 'OK') !== FALSE) {
+        $this->session->set_flashdata('error', 'Gagal mengirim pesan.');
+      } else {
+        $this->session->set_flashdata('success', 'Pesan berhasil terkirim.');
+      }
+
+      redirect('kontak');
+    }
+  }
+
+  private function send_message($no_wa, $message)
+  {
+    $token = $this->Setting_model->integrasi();
+    $ch = curl_init();
+    $data = array(
+      'recipient_type' => 'individual',
+      'to' => $no_wa,
+      'type' => 'text',
+      'text' => array(
+        'body' => $message
+      )
+    );
+    $json_data = json_encode($data);
+
+    curl_setopt_array($ch, array(
+      CURLOPT_URL => $token['url_api'],
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => '',
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 0,
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => 'POST',
+      CURLOPT_POSTFIELDS => $json_data,
+      CURLOPT_HTTPHEADER => array(
+        'Authorization: ' . $token['wagw']
+      ),
+    ));
+
+    $response = curl_exec($ch);
+
+    if (curl_errno($ch)) {
+      // handle cURL error
+      $response = curl_error($ch);
     }
 
-    public function index()
-    {
-        $data['home'] = $this->Setting_model->get_setting();
-        $data['setting'] = $this->Setting_model->get_setting();
-        $data['title'] = 'Kontak';
+    curl_close($ch);
 
-        $this->load->view('frontend/layouts/header', $data);
-        $this->load->view('frontend/kontak');
-        $this->load->view('frontend/layouts/footer', $data);
-    }
+    return $response;
+  }
 
-    public function send()
-    {
-        // validate form data
-        $this->form_validation->set_rules('name', 'Name', 'trim|required');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
-        $this->form_validation->set_rules('whatsapp', 'WhatsApp', 'trim|required|numeric');
-        $this->form_validation->set_rules('subject', 'Subject', 'trim|required');
-        $this->form_validation->set_rules('pesan', 'Message', 'trim|required');
+  private function send_email($email, $subject)
+  {
+    // PHPMailer object
+    $mail = new PHPMailer(true);
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $mail->isSMTP();
+    $mail->Host     = EMAIL_HOST;
+    $mail->SMTPAuth = true;
+    $mail->Username = EMAIL_ALAMAT;
+    $mail->Password = EMAIL_PASSWORD;
+    $mail->Port     = EMAIL_PORT;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 
-        if ($this->form_validation->run() == FALSE) {
-            // handle form validation errors
-            $this->session->set_flashdata('error', validation_errors());
-            redirect('kontak');
-        } else {
-            $name = trim($this->input->post('name', true));
-            $email = trim($this->input->post('email', true));
-            $no_wa = trim($this->input->post('whatsapp', true));
-            $subject = trim($this->input->post('subject', true));
-            $pesan = trim($this->input->post('pesan', true));
+    //Recipients
+    $mail->setFrom(EMAIL_ALAMAT, EMAIL_NAMA);
+    $mail->addAddress($email);     //Add a recipient
+    $mail->addReplyTo('infosandemo@gmail.com', 'Information Sandemo IT');
 
-            $no_wa = substr_replace($no_wa, '62', 0, 1); // mengubah "08" menjadi "62"
-            $no_wa = str_replace('-', '', $no_wa); // menghapus karakter "-" (opsional)
+    //Attachments
+    // $mail->addAttachment('/var/tmp/file.tar.gz');
 
-            // insert db kontak
-            $save = [
-                'name' => $name,
-                'email' => $email,
-                'whatsapp' => $no_wa,
-                'subject' => $subject,
-                'pesan' => $pesan,
-                'aksi' => 0
-            ];
-            // insert db subscriber
-            $sub = [
-                'nama' => $name,
-                'email' => $email
-            ];
-            $this->db->insert('kontak', $save);
-
-            // insert db subscriber email
-            $this->load->model('Signup_model');
-            $this->db->insert('subscriber', $sub);
-
-            // send message using cURL
-            $response = $this->send_message($no_wa, "Terima kasih $name telah membicarakan proyek kepada kami. Kami sangat berharap dapat bekerja sama dengan Anda dalam mewujudkan proyek ini. Silakan tunggu balasan dari tim support kami untuk langkah selanjutnya.\n\n-sit");
-            $this->send_email($email, $subject);
-
-            // handle cURL response
-            if (strpos($response, 'OK') !== FALSE) {
-                $this->session->set_flashdata('error', 'Gagal mengirim pesan.');
-            } else {
-                $this->session->set_flashdata('success', 'Pesan berhasil terkirim.');
-            }
-
-            redirect('kontak');
-        }
-    }
-
-    private function send_message($no_wa, $message)
-    {
-        $token = $this->Setting_model->integrasi();
-        $ch = curl_init();
-        $data = array(
-            'recipient_type' => 'individual',
-            'to' => $no_wa,
-            'type' => 'text',
-            'text' => array(
-                'body' => $message
-            )
-        );
-        $json_data = json_encode($data);
-
-        curl_setopt_array($ch, array(
-            CURLOPT_URL => $token['url_api'],
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS => $json_data,
-            CURLOPT_HTTPHEADER => array(
-                'Authorization: ' . $token['wagw']
-            ),
-        ));
-
-        $response = curl_exec($ch);
-
-        if (curl_errno($ch)) {
-            // handle cURL error
-            $response = curl_error($ch);
-        }
-
-        curl_close($ch);
-
-        return $response;
-    }
-
-    private function send_email($email, $subject)
-    {
-        // PHPMailer object
-        $mail = new PHPMailer(true);
-        //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-        $mail->isSMTP();
-        $mail->Host     = EMAIL_HOST;
-        $mail->SMTPAuth = true;
-        $mail->Username = EMAIL_ALAMAT;
-        $mail->Password = EMAIL_PASSWORD;
-        $mail->Port     = EMAIL_PORT;
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-
-        //Recipients
-        $mail->setFrom(EMAIL_ALAMAT, EMAIL_NAMA);
-        $mail->addAddress($email);     //Add a recipient
-        $mail->addReplyTo('infosandemo@gmail.com', 'Information Sandemo IT');
-
-        //Attachments
-        // $mail->addAttachment('/var/tmp/file.tar.gz');
-
-        //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = $subject;
-        $mail->Body    = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = $subject;
+    $mail->Body    = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">
         
         <head>
@@ -197,48 +197,48 @@ class Kontak extends CI_Controller
         
         </html>';
 
-        // Send email
-        if (!$mail->send()) {
-            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">'
-                . $mail->ErrorInfo . '</div>
+    // Send email
+    if (!$mail->send()) {
+      $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">'
+        . $mail->ErrorInfo . '</div>
             ');
-            redirect($_SERVER['HTTP_REFERER']);
-        } else {
-            return true;
-        }
+      redirect($_SERVER['HTTP_REFERER']);
+    } else {
+      return true;
+    }
+  }
+
+  public function sendwa() //WhatsApp redirect
+  {
+    // Mengambil nomor HP (nohp) dari database
+    $this->db->select('nohp');
+    $query = $this->db->get('setting');
+    if ($query->num_rows() > 0) {
+      $row = $query->row();
+      $nowa = $row->nohp;
     }
 
-    public function sendwa() //WhatsApp redirect
-    {
-        // Mengambil nomor HP (nohp) dari database
-        $this->db->select('nohp');
-        $query = $this->db->get('setting');
-        if ($query->num_rows() > 0) {
-            $row = $query->row();
-            $nowa = $row->nohp;
-        }
+    $name = urlencode($this->input->post('name', true));
+    $email = urlencode($this->input->post('email', true));
+    $subject = urlencode('Consultation');
+    $pesan = urlencode($this->input->post('pesan', true));
 
-        $name = urlencode($this->input->post('name', true));
-        $email = urlencode($this->input->post('email', true));
-        $subject = urlencode('Consultation');
-        $pesan = urlencode($this->input->post('pesan', true));
+    $this->load->model('Signup_model');
+    $dataemail = str_replace('%40', '@', $email);
+    $this->Signup_model->save_email($dataemail);
 
-        $this->load->model('Signup_model');
-        $dataemail = str_replace('%40', '@', $email);
-        $this->Signup_model->save_email($dataemail);
+    $message = "Name: " . urlencode($name) . "%0ASubject: " . urlencode($subject) . "%0APesan: " . urlencode($pesan);
+    $url = 'https://api.whatsapp.com/send?phone=' . $nowa . '&text=' . $message;
 
-        $message = "Name: " . urlencode($name) . "%0ASubject: " . urlencode($subject) . "%0APesan: " . urlencode($pesan);
-        $url = 'https://api.whatsapp.com/send?phone=' . $nowa . '&text=' . $message;
+    // Send data using cURL and redirect using HTTP header
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_exec($ch);
+    curl_close($ch);
 
-        // Send data using cURL and redirect using HTTP header
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_exec($ch);
-        curl_close($ch);
-
-        header("Location: $url");
-    }
+    header("Location: $url");
+  }
 }
