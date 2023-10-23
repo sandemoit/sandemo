@@ -61,6 +61,7 @@ class Subscriber extends CI_Controller
       $this->load->view('frontend/layouts/header', $data);
       $this->load->view('frontend/download');
       $this->load->view('frontend/layouts/footer');
+      $respon = $this->session->set_flashdata('message', validation_errors());
     } else {
       $penerima = $this->input->post('email', true);
       $name = $this->input->post('name', true);
@@ -88,7 +89,6 @@ class Subscriber extends CI_Controller
 
       $this->send_email($penerima);
 
-      $this->session->set_flashdata('success', 'Silahkan cek email anda!');
       redirect($_SERVER['HTTP_REFERER']);
     }
   }
@@ -116,7 +116,7 @@ class Subscriber extends CI_Controller
     // $mail->addAttachment('/var/tmp/file.tar.gz');
 
     //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->isHTML(true);  //Set email format to HTML
     $mail->Subject = 'Selamat Datang di Sandemo IT!';
     $mail->Body    = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
         <html xmlns="http://www.w3.org/1999/xhtml">

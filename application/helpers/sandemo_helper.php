@@ -67,4 +67,10 @@ if (!function_exists('format_indo')) {
 
         return $result;
     }
+
+    function output_json($data) //ini untuk mengubah data menjadi json
+    {
+        $ci = get_instance();
+        $ci->output->set_content_type('application/json')->set_output(json_encode($data));
+    }
 }

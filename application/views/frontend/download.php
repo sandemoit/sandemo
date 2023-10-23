@@ -34,20 +34,20 @@
                                 <h6 class="semi-title mb-10">Download</h6>
                                 <h2 class="sect-title mb-35">Isi form untuk mendownload</h2>
                             </div>
-                            <form class="row contact-form" action="<?= base_url('subscriber/download') ?>" method="POST">
+                            <form class="row contact-form download-form" action="<?= base_url('subscriber/download') ?>" method="POST">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="input-box mb-20">
-                                        <input type="text" id="name" name="name" value="Sandi" placeholder="Full name">
+                                        <input type="text" id="name" name="name" placeholder="Full name">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="input-box mail-input mb-20">
-                                        <input type="text" name="email" value="infosandemo@gmail.com" placeholder="Email address">
+                                        <input type="text" name="email" placeholder="Email address">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="input-box number-input mb-20">
-                                        <input type="text" name="whatsapp" value="085380945896" placeholder="WhatsApp">
+                                        <input type="text" name="whatsapp" placeholder="WhatsApp">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-6 mb-20">

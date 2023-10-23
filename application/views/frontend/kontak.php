@@ -77,7 +77,7 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <button type="submit" class="form-btn">Get A Quote</button>
+                                    <button type="submit" class="form-btn">Submit</button>
                                 </div>
                             </form>
                         </div>
