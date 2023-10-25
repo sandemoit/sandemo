@@ -15,7 +15,7 @@
 
     <?php
     if ($this->uri->segment(1) == '') {
-        echo '<meta name="title" content="' . $title . ' - ' . $setting['slogan_website'] . '" />';
+        echo '<meta name="title" content="Jasa Pembuatan Website - ' . $setting['slogan_website'] . '" />';
     } else {
         echo '<meta name="title" content="' . $title . ' - ' . $setting['judul_website'] . '" />';
     }
