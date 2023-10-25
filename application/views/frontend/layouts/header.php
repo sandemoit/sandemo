@@ -35,8 +35,8 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
     <meta property="og:url" content="<?= current_url(); ?>">
-    <meta property="og:image" content="<?= base_url('assets/frontend/img/service/web.webp') ?>">
-    <meta property="og:image:secure_url" content="<?= base_url('assets/frontend/img/service/web.webp') ?>">
+    <meta property="og:image" content="<?= base_url('assets/frontend/img/service/metaweb.webp') ?>">
+    <meta property="og:image:secure_url" content="<?= base_url('assets/frontend/img/service/metaweb.webp') ?>">
     <meta property="article:section" content="Technology">
     <meta property="article:tag" content="PT. Sandemo Indo Teknologi, Sandemo, Sandemo IT, Sandemo Indo Teknologi, Sandemo Indo, Sandemo Jasa Pembuatan Website Profesional Palembang, Digital Marketing, Layanan Digital Marketing, Jasa Pembuatan Website Profesional Palembang, Jasa Website Palembang, Jasa Web Murah, Web Promotion, Jasa Maintenance Website,jasa perbaikan website,jasa desain website, Jasa Pembuatan Logo, Jasa Company Profile, Brand Identity Design, Web Portal Berita, Web Sekolah, Web Personal, Jasa Web Professional, Creative Digital, Startup, Jasa Sosial Media Management, Facebook Ads,jasa seo palembang, jasa pembuatan website, perbaikan web, Jasa Pembuatan Website Profesional Palembang, jasa web palembang, desain website palembang, jasa pembuatan website murah, cara buat website">
     <link rel="canonical" href="<?= current_url(); ?>">
