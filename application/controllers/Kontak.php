@@ -208,37 +208,37 @@ class Kontak extends CI_Controller
     }
   }
 
-  public function sendwa() //WhatsApp redirect
-  {
-    // Mengambil nomor HP (nohp) dari database
-    $this->db->select('nohp');
-    $query = $this->db->get('setting');
-    if ($query->num_rows() > 0) {
-      $row = $query->row();
-      $nowa = $row->nohp;
-    }
+  // public function sendwa() //WhatsApp redirect
+  // {
+  //   // Mengambil nomor HP (nohp) dari database
+  //   $this->db->select('nohp');
+  //   $query = $this->db->get('setting');
+  //   if ($query->num_rows() > 0) {
+  //     $row = $query->row();
+  //     $nowa = $row->nohp;
+  //   }
 
-    $name = urlencode($this->input->post('name', true));
-    $email = urlencode($this->input->post('email', true));
-    $subject = urlencode('Consultation');
-    $pesan = urlencode($this->input->post('pesan', true));
+  //   $name = urlencode($this->input->post('name', true));
+  //   $email = urlencode($this->input->post('email', true));
+  //   $subject = urlencode('Consultation');
+  //   $pesan = urlencode($this->input->post('pesan', true));
 
-    $this->load->model('Signup_model');
-    $dataemail = str_replace('%40', '@', $email);
-    $this->Signup_model->save_email($dataemail);
+  //   $this->load->model('Signup_model');
+  //   $dataemail = str_replace('%40', '@', $email);
+  //   $this->Signup_model->save_email($dataemail);
 
-    $message = "Name: " . urlencode($name) . "%0ASubject: " . urlencode($subject) . "%0APesan: " . urlencode($pesan);
-    $url = 'https://api.whatsapp.com/send?phone=' . $nowa . '&text=' . $message;
+  //   $message = "Name: " . urlencode($name) . "%0ASubject: " . urlencode($subject) . "%0APesan: " . urlencode($pesan);
+  //   $url = 'https://api.whatsapp.com/send?phone=' . $nowa . '&text=' . $message;
 
-    // Send data using cURL and redirect using HTTP header
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_exec($ch);
-    curl_close($ch);
+  //   // Send data using cURL and redirect using HTTP header
+  //   $ch = curl_init();
+  //   curl_setopt($ch, CURLOPT_URL, $url);
+  //   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  //   curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+  //   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+  //   curl_exec($ch);
+  //   curl_close($ch);
 
-    header("Location: $url");
-  }
+  //   header("Location: $url");
+  // }
 }

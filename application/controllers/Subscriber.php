@@ -52,16 +52,22 @@ class Subscriber extends CI_Controller
     $data['brand'] = $this->Setting_model->get_brand();
     $data['setting'] = $this->Setting_model->get_setting();
     $data['title'] = 'Download file gratis';
+    $this->load->view('frontend/layouts/header', $data);
+    $this->load->view('frontend/download');
+    $this->load->view('frontend/layouts/footer');
+  }
+
+  public function do_download()
+  {
+    $response = array();
 
     $this->form_validation->set_rules('name', 'Name', 'trim|required');
     $this->form_validation->set_rules('whatsapp', 'Whatsapp', 'trim|required');
     $this->form_validation->set_rules('email', 'email', 'trim|required');
 
     if ($this->form_validation->run() == false) {
-      $this->load->view('frontend/layouts/header', $data);
-      $this->load->view('frontend/download');
-      $this->load->view('frontend/layouts/footer');
-      $respon = $this->session->set_flashdata('message', validation_errors());
+      $validation_errors = validation_errors();
+      $response = array('success' => false, 'message' => $validation_errors);
     } else {
       $penerima = $this->input->post('email', true);
       $name = $this->input->post('name', true);
@@ -88,9 +94,12 @@ class Subscriber extends CI_Controller
       $this->db->insert('kontak', $save);
 
       $this->send_email($penerima);
-
-      redirect($_SERVER['HTTP_REFERER']);
+      // Kirim respons JSON ke JavaScript
+      $response = array('success' => true, 'message' => 'Berhasil mengirimkan ke email!');
     }
+    header('Content-Type: application/json');
+    echo json_encode($response); // Cetak respons JSON ke konsol
+
   }
 
   private function send_email($penerima)

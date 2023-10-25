@@ -18,14 +18,14 @@ $(document).ready(function() {
             url: form.attr("action"),
             data: form.serialize(),
             success: function(response) {
-                if (response) {
-                    Swal.fire('Good job!', 'Silahkan cek email anda!', 'success');
+                if (response.success) {
+                    Swal.fire('Good job!', response.message, 'success');
                     resetSuksesButton();
                 } else {
-                    Swal.fire('Oops...', 'Silahkan isi semua field!', 'error');
+                    Swal.fire('Oops...', response.message, 'error');
                     resetSubmitButton();
                 }
-            },
+            },            
             error: function(xhr) {
                 Swal.fire('Oops...', 'Terjadi kesalahan dalam mengirim data!', 'error');
                 resetSubmitButton();
