@@ -613,7 +613,7 @@
             return encodeURIComponent(url).replace(/:/g, '%3A').replace(/\//g, '%2F');
         }
         document.addEventListener('DOMContentLoaded', function() {
-            const articleTitle = "{{ $article = $post->title }}"; // Gantilah dengan judul artikel yang sesuai
+            const articleTitle = "<?= $title; ?>"; // Gantilah dengan judul artikel yang sesuai
             const currentURL = window.location.href;
 
             // Share ke Facebook
