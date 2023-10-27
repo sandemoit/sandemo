@@ -285,7 +285,7 @@
                                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                             <ul class="navbar-nav list-style-none">
                                                 <li class="nav-item">
-                                                    <a class="nav-link" href="<?= site_url('') ?>">Home</a>
+                                                    <a class="nav-link" href="<?= site_url('') ?>">Homes</a>
                                                 </li>
 
                                                 <li class="nav-item <?= ($this->uri->segment(1) == 'tentang-kami') ? 'active' : '' ?>">
