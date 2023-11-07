@@ -30,7 +30,7 @@
                                 <td><?= $no++; ?></a></td>
                                 <td>
                                     <div class="d-flex px-2 py-1">
-                                        <img class="crop" width="100%" class="avatar avatar-sm me-3" src="<?= base_url('assets/frontend/images/portfolio/') . $p['image']; ?>" alt="user">
+                                        <img class="crop" width="100%" class="avatar avatar-sm me-3" src="<?= base_url('assets/frontend/img/portfolio/') . $p['image']; ?>" alt="user">
                                     </div>
                                 </td>
                                 <td><?= $p['title'] ?></td>

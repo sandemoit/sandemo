@@ -42,8 +42,8 @@ class Page extends CI_Controller
     public function doAddBlog()
     {
         // upload file
-        $config['upload_path']          = './assets/frontend/images/blog/';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['upload_path']          = './assets/frontend/img/blog/';
+        $config['allowed_types']        = '*';
         $config['max_size']             = 2048;
         $config['file_name']           = uniqid();
 
@@ -95,7 +95,7 @@ class Page extends CI_Controller
 
         // Compress image and create thumbnail
         $uploadData = $this->upload->data();
-        $thumbnailPath = './assets/frontend/images/blog/thumbnail/';
+        $thumbnailPath = './assets/frontend/img/blog/thumbnail/';
         $thumbnailName = $config['file_name'] . $uploadData['file_ext'];
         $thumbnailFullPath = $thumbnailPath . $thumbnailName;
         $this->createThumbnail($uploadData['full_path'], $thumbnailFullPath);
@@ -149,8 +149,8 @@ class Page extends CI_Controller
         $id = $this->input->post('id');
         // upload file
         if (!empty($_FILES)) {
-            $config['upload_path']          = './assets/frontend/images/blog/';
-            $config['allowed_types']        = 'gif|jpg|png';
+            $config['upload_path']          = './assets/frontend/img/blog/';
+            $config['allowed_types']        = '*';
             $config['file_name']           = date('dmYhis') . '.jpg';
             $file_name = $config['file_name'];
 
@@ -165,7 +165,7 @@ class Page extends CI_Controller
             $blog = $this->Page_model->get_blog(null, null, $id)->result()[0];
             $old_file = $blog->gambar;
             // remove old file
-            unlink('./assets/frontend/images/blog/' . $old_file);
+            unlink('./assets/frontend/img/blog/' . $old_file);
         } else {
             $blog = $this->Page_model->get_blog(null, null, $id)->result()[0];
             $file_name = $blog->gambar;
@@ -199,8 +199,8 @@ class Page extends CI_Controller
         $blog = $this->Page_model->get_blog(null, null, $id)->result()[0];
 
         if ($blog) {
-            $imagePath = FCPATH . 'assets/frontend/images/blog/' . $blog->gambar;
-            $thumbnailPath = FCPATH . 'assets/frontend/images/blog/thumbnail/' . $blog->gambar;
+            $imagePath = FCPATH . 'assets/frontend/img/blog/' . $blog->gambar;
+            $thumbnailPath = FCPATH . 'assets/frontend/img/blog/thumbnail/' . $blog->gambar;
 
             // Delete image file
             if (file_exists($imagePath)) {
@@ -248,8 +248,8 @@ class Page extends CI_Controller
     public function doAddPortfolio()
     {
         // upload file
-        $config['upload_path']          = './assets/frontend/images/portfolio/';
-        $config['allowed_types']        = 'gif|jpg|png|avif';
+        $config['upload_path']          = './assets/frontend/img/portfolio/';
+        $config['allowed_types']        = '*';
         $config['max_size']             = 2048;
         $config['file_name']           = uniqid();
 
