@@ -38,7 +38,7 @@
                                 <td class="text-center"><?= $b['brand_name']; ?></td>
                                 <td>
                                     <div class="d-flex px-2 py-1">
-                                        <img class="crop" width="250" height="250" class="avatar avatar-sm me-3" src="<?= base_url('assets/frontend/img/brand/') . $b['image'] ?>" alt="<?= $b['brand_name']; ?>">
+                                        <img width="250" class="avatar avatar-sm me-3" src="<?= base_url('assets/frontend/img/brand/') . $b['image'] ?>" alt="<?= $b['brand_name']; ?>">
                                     </div>
                                 </td>
                                 <td class="text-center">
