@@ -6923,9 +6923,8 @@ input.main-search-input:-ms-input-placeholder {
   .portfolio-wrapper2 .single-portfolio {
     padding: 0;
     position: absolute;
-    left: 50px;
-    top: auto;
-    bottom: 47px;
+    left: 19px;
+    top: 187px;
     z-index: 3;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
@@ -6937,8 +6936,8 @@ input.main-search-input:-ms-input-placeholder {
         left: 30px; } }
     @media (max-width: 767px) {
       .portfolio-wrapper2 .single-portfolio {
-        left: 15px;
-        bottom: 25px; } }
+        left: 14px;
+        bottom: 5px; } }
     .portfolio-wrapper2 .single-portfolio p {
       color: #fff;
       padding-left: 0;
