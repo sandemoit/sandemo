@@ -11,7 +11,7 @@
                     <div class="col-6"><a href="javascript:void(0)" class="link"><i class="icon-picture"></i>
                             <font class="font-medium">54</font>
                         </a></div>
-                </div> -->
+                </div> tes-->
             </center>
         </div>
         <div>
