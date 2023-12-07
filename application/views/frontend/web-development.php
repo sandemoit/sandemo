@@ -195,7 +195,7 @@
                             <ul class="plan-price3">
                                 <li>Rp. 3.899.000</li>
                             </ul>
-                            <a target="_blank" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20saya%20tertarik%20dengan%20layanan%20Web%20Development%20paket%20Landing%20Reguler+" class="theme_btn price-btn">Order Now<i class="fab fa-whatsapp"></i></a>
+                            <a target="_blank" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20saya%20tertarik%20dengan%20layanan%20Web%20Development%20paket%20Reguler+" class="theme_btn price-btn">Order Now<i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
