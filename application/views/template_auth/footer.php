@@ -41,13 +41,10 @@
 <script src="<?= base_url('assets'); ?>/js/dashboard1.js"></script>
 <script src="<?= base_url('assets'); ?>/node_modules/raphael/raphael-min.js"></script>
 <script src="<?= base_url('assets'); ?>/node_modules/morrisjs/morris.min.js"></script>
-<script src="<?= base_url('assets'); ?>/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+<!-- <script src="<?= base_url('assets'); ?>/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script> -->
 <!-- Popup message jquery -->
 <script src="<?= base_url('assets'); ?>/node_modules/toast-master/js/jquery.toast.js"></script>
-<!-- Chart JS -->
-<script src="<?= base_url('assets'); ?>/node_modules/toast-master/js/jquery.toast.js"></script>
 <!-- Javascript datatable -->
-<script src="<?= base_url('assets'); ?>/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?= base_url('assets'); ?>/node_modules/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?= base_url('assets'); ?>/node_modules/summernote/dist/summernote-bs4.min.js"></script>
 <script src="<?= base_url('assets'); ?>/node_modules/dropify/dist/js/dropify.min.js"></script>
