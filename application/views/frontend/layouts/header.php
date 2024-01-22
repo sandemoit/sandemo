@@ -21,9 +21,10 @@
     }
     ?>
 
+    <link rel="canonical" href="<?= base_url(uri_string()) ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Sandemo IT merupakan penyedia layanan teknologi informasi seperti jasa pembuatan website, jasa redesain web, jasa SEO, jasa pembuatan aplikasi web dan lainnya.">
-    <meta name="keywords" content="PT. Sandemo Indo Teknologi, Sandemo, Sandemo IT, Sandemo Indo Teknologi, Sandemo Indo, Sandemo Jasa Pembuatan Website Profesional Palembang, Digital Marketing, Layanan Digital Marketing, Jasa Pembuatan Website Profesional Palembang, Jasa Website Palembang, Jasa Web Murah, Web Promotion, Jasa Maintenance Website,jasa perbaikan website,jasa desain website, Jasa Pembuatan Logo, Jasa Company Profile, Brand Identity Design, Web Portal Berita, Web Sekolah, Web Personal, Jasa Web Professional, Creative Digital, Startup, Jasa Sosial Media Management, Facebook Ads,jasa seo palembang, jasa pembuatan website, perbaikan web, Jasa Pembuatan Website Profesional Palembang, jasa web palembang, desain website palembang, jasa pembuatan website murah, cara buat website">
+    <meta name="description" content="<?= $setting['meta_desc'] . ' - ' . $title ?>">
+    <meta name="keywords" content="<?= $setting['meta_key'] ?>">
 
     <!-- Open Graph / Facebook -->
     <meta name="robots" content="index, follow">
@@ -31,29 +32,12 @@
     <meta name="google-site-verification" content="60PhvPIn1NQaQGJnkEPjulzNIhr5ik7R37hC3HjoNug" />
     <meta name="copyright" content="<?= $setting['judul_website'] ?>">
     <meta property="og:title" content="<?= $title . " - " . $setting['judul_website'] ?>">
-    <meta property="og:description" content="<?= $setting['about_website'] ?>">
+    <meta property="og:description" content="<?= $setting['meta_desc'] . ' - ' . $title  ?>">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
-    <meta property="og:url" content="<?= current_url(); ?>">
+    <meta property="og:url" content="<?= base_url(uri_string()); ?>">
     <meta property="og:image" content="<?= base_url('assets/frontend/img/service/metaweb.webp') ?>">
     <meta property="og:image:secure_url" content="<?= base_url('assets/frontend/img/service/metaweb.webp') ?>">
-    <meta property="article:section" content="Technology">
-    <meta property="article:tag" content="PT. Sandemo Indo Teknologi, Sandemo, Sandemo IT, Sandemo Indo Teknologi, Sandemo Indo, Sandemo Jasa Pembuatan Website Profesional Palembang, Digital Marketing, Layanan Digital Marketing, Jasa Pembuatan Website Profesional Palembang, Jasa Website Palembang, Jasa Web Murah, Web Promotion, Jasa Maintenance Website,jasa perbaikan website,jasa desain website, Jasa Pembuatan Logo, Jasa Company Profile, Brand Identity Design, Web Portal Berita, Web Sekolah, Web Personal, Jasa Web Professional, Creative Digital, Startup, Jasa Sosial Media Management, Facebook Ads,jasa seo palembang, jasa pembuatan website, perbaikan web, Jasa Pembuatan Website Profesional Palembang, jasa web palembang, desain website palembang, jasa pembuatan website murah, cara buat website">
-    <link rel="canonical" href="<?= current_url(); ?>">
-
-    <!-- CSS here -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/frontend/') ?>img/favicons/favicon.ico" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/bootstrap.min.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/animate.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/magnific-popup.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/all.min.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/gt-font.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/metisMenu.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/nice-select.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/spacing.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/main.css" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/custom.css" />
 
     <!-- breadcrumb -->
     <?php
@@ -65,9 +49,9 @@
         "itemListElement" => array(
             array(
                 "@type" => "ListItem",
-                "position" => 1, // Ganti dengan posisi yang sesuai
+                "position" => 1,
                 "name" => $title,
-                "item" => current_url(), // Ganti dengan URL yang sesuai
+                "item" => base_url(uri_string()),
             )
         )
     );
@@ -94,6 +78,20 @@
         gtag('config', 'G-L69D835ME0');
     </script>
     <!-- End Google Tag Manager -->
+
+    <!-- CSS here -->
+    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/frontend/') ?>img/favicons/favicon.ico" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/animate.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/magnific-popup.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/all.min.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/gt-font.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/metisMenu.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/nice-select.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/spacing.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/main.css" />
+    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/custom.css" />
 </head>
 
 <body>
