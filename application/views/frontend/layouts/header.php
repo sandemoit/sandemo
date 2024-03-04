@@ -107,7 +107,7 @@
 
     <!-- CSS here -->
     <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/frontend/') ?>img/favicons/favicon.ico" />
-    <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/3.0.7/metisMenu.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-nice-select@1.1.0/css/nice-select.min.css">
     <link rel="stylesheet" href="<?= base_url('assets/frontend/') ?>css/owl.carousel.min.css" />
