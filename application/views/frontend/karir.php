@@ -28,7 +28,7 @@
                         <h2 class="sect-title">Jadilah bagian kami</h2>
                     </div>
                 </div>
-                <div class="col-lg-3 text-lg-end">
+                <!-- <div class="col-lg-3 text-lg-end">
                     <div class="select-job-area mb-30">
                         <select name="job" id="job-select" class="job-select">
                             <option selected disabled>Opening Jobs</option>
@@ -37,7 +37,7 @@
                             <?php endforeach ?>
                         </select>
                     </div>
-                </div>
+                </div> -->
             </div>
             <?= $this->session->flashdata('message'); ?>
             <?php foreach ($karir as $key) : ?>
@@ -60,11 +60,11 @@
                     </div>
                 </div>
             <?php endforeach ?>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-12 mt-25">
                     <a href="#" class="preview-more">More Opportunity</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <!--job-board-area end-->

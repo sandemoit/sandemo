@@ -26,7 +26,7 @@
                         <div class="section-title">
                             <h6 class="semi-title mb-10">Web Development</h6>
                             <h2 class="sect-title">#1 Jasa Web Development Terbaik dan Professional</h2>
-                            <p class="paragraph-title" style="text-align: justify;"><strong>SANDEMO IT</strong> tawaran kami mencakup layanan pembuatan website profesional yang mampu mengubah situs web Anda menjadi alat pemasaran yang sangat efektif. Tim pengembang berpengalaman kami memiliki keahlian dalam menciptakan situs web yang inovatif dan berkinerja tinggi. Dengan bantuan kami, Anda dapat yakin bahwa situs web Anda akan memberikan dampak positif yang signifikan pada audiens target Anda. Kami siap melayani berbagai kategori, termasuk Company Profile, Toko Online, Blog, Berita, Pariwisata, dan banyak lainnya.
+                            <p class="paragraph-title" style="text-align: justify;"><strong>SANDEMO IT</strong> tawaran Kami ingin menawarkan layanan pembuatan website profesional untuk usaha Anda. Dengan memiliki website, usaha Anda dapat meningkatkan visibilitas online dan menjangkau lebih banyak pelanggan. Kami siap membantu dalam memperkuat kehadiran online usaha Anda. Kami siap melayani berbagai kategori, termasuk Company Profile, Toko Online, Blog, Berita, Pariwisata, dan banyak lainnya.
                             </p>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                 <div class="col-lg-6">
                     <div class="about-img-wrapper pos-rel mb-30">
                         <img class="shape-square" src="<?= base_url('assets/frontend/img/shape/square-1.png') ?>" alt="Shape">
-                        <img class="img-fluid" src="<?= base_url('assets/frontend/img/services/web.webp') ?>" alt="Jasa Web Development Terbaik dan Professional">
+                        <a href="https://wa.me/<?= $setting['nohp'] ?>"><img class="img-fluid w-lg-80" src="<?= base_url('assets/frontend/img/services/web.webp') ?>" alt="Jasa Web Development Terbaik dan Professional"></a>
                     </div>
                 </div>
             </div>
@@ -79,8 +79,8 @@
                             <li>Install Pixel Facebook</li>
                             <li>Install Tracking GTM</li>
                             <li>Pembuatan Fanpage Facebook</li>
-                            <li>Pembuatan Fanpage Facebook</li>
-                            <li>Pembuatan Fanpage Facebook</li>
+                            <li>Pembuatan Akun Instagram</li>
+                            <li>Pembuatan WhatsApp Bussiness</li>
                             <li>Pembuatan Logo</li>
                             <li>Design Kartu Nama</li>
                             <li>Design Company Profile</li>
@@ -128,7 +128,7 @@
                             <ul class="plan-price1">
                                 <li>Rp. 1.199.000</li>
                             </ul>
-                            <a target="_blank" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20saya%20tertarik%20dengan%20layanan%20Web%20Development%20paket%20Landing%20Page" class="theme_btn price-btn">Order Now<i class="fab fa-whatsapp"></i></a>
+                            <a target="_blank" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20saya%20tertarik%20dengan%20layanan%20Web%20development%20Paket%20Super%20Hemat" class="theme_btn price-btn">Order Now<i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                             <ul class="plan-price2">
                                 <li>Rp. 1.799.000</li>
                             </ul>
-                            <a target="_blank" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20saya%20tertarik%20dengan%20layanan%20Web%20Development%20paket%20Landing%20Reguler" class="theme_btn price-btn">Order Now<i class="fab fa-whatsapp"></i></a>
+                            <a target="_blank" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20saya%20tertarik%20dengan%20layanan%20Web%20Development%20paket%20Reguler" class="theme_btn price-btn">Order Now<i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
                             <ul class="plan-price3">
                                 <li>Rp. 3.899.000</li>
                             </ul>
-                            <a target="_blank" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20saya%20tertarik%20dengan%20layanan%20Web%20Development%20paket%20Reguler+" class="theme_btn price-btn">Order Now<i class="fab fa-whatsapp"></i></a>
+                            <a target="_blank" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20saya%20tertarik%20dengan%20layanan%20Web%20Development%20paket%20Reguler%20Plus" class="theme_btn price-btn">Order Now<i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
@@ -299,7 +299,7 @@
                             <ul class="plan-price2">
                                 <li>Rp. 4.899.000</li>
                             </ul>
-                            <a target="_blank" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20saya%20tertarik%20dengan%20layanan%20Web%20Development%20paket%20Business+" class="theme_btn price-btn">Order Now<i class="fab fa-whatsapp"></i></a>
+                            <a target="_blank" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20saya%20tertarik%20dengan%20layanan%20Web%20Development%20paket%20Business%20Plus" class="theme_btn price-btn">Order Now<i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>

@@ -73,18 +73,15 @@
 <!-- <script defer src="https://widget.tochat.be/bundle.js?key=5e6f9606-1277-46a8-bf2e-0a9b065e66f8"></script> -->
 
 <script src="<?= base_url('assets/frontend/') ?>js/vendor/modernizr-3.5.0.min.js"></script>
-<script src="<?= base_url('assets/frontend/') ?>js/vendor/jquery-2.2.4.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
-<script src="<?= base_url('assets/frontend/') ?>js/metisMenu.min.js"></script>
-<script src="<?= base_url('assets/frontend/') ?>js/jquery.nice-select.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/3.0.7/metisMenu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-nice-select@1.1.0/js/jquery.nice-select.min.js"></script>
 <script src="<?= base_url('assets/frontend/') ?>js/wow.min.js"></script>
 <script src="<?= base_url('assets/frontend/') ?>js/jquery.counterup.min.js"></script>
-<script src="<?= base_url('assets/frontend/') ?>js/waypoints.min.js"></script>
 <script src="<?= base_url('assets/frontend/') ?>js/jquery.scrollUp.min.js"></script>
-<script src="<?= base_url('assets/frontend/') ?>js/isotope.pkgd.min.js"></script>
-<script src="<?= base_url('assets/frontend/') ?>js/imagesloaded.pkgd.min.js"></script>
 <script src="<?= base_url('assets/frontend/') ?>js/jquery.magnific-popup.min.js"></script>
 <script src="<?= base_url('assets/frontend/') ?>js/plugins.js"></script>
 <script src="<?= base_url('assets/frontend/') ?>js/main.js"></script>
