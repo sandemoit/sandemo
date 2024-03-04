@@ -79,8 +79,8 @@
                                 <h3><a><?= $key['name'] ?></a></h3>
                                 <div class="footer__social mt-30">
                                     <a href="https://www.facebook.com/<?= $key['facebook'] ?>"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.facebook.com/<?= $key['youtube'] ?>"><i class="fab fa-youtube"></i></a>
-                                    <a href="https://www.facebook.com/<?= $key['instagram'] ?>"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://www.linkedin.com/in/<?= $key['youtube'] ?>"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/<?= $key['instagram'] ?>"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                             <h6 class="semi-title text-white">Chat Us</h6>
                             <p class="paragrap-text text-white">Lebih dari 300+ klien merasa puas dengan hasil layanan yang telah kami berikan. Sekarang, waktunya bagi kami untuk mengoptimalkan bisnis Anda. <strong>Gratis Konsultasi!</strong></p>
                             <ul class="btn-list d-md-flex align-items-center justify-content-center">
-                                <li><a class="theme_btn mr-xs-0" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20min,%20saya%20ingin%20bekerja%20sama%20dengan%20sandemo%20IT.%20Boleh%20berikan%20informasi%20lebih%20lanjut?"><i class="fab fa-whatsapp"></i> Chat Us</a>
+                                <li><a class="theme_btn mr-xs-0" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20min,%20saya%20ingin%20bekerja%20sama%20dengan%20sandemo%20IT.%20Boleh%20berikan%20informasi%20lebih%20lanjut?">Chat Us <i class="fab fa-whatsapp"></i></a>
                                 </li>
                             </ul>
                         </div>
