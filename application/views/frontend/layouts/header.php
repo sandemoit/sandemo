@@ -24,7 +24,7 @@
     <link rel="canonical" href="<?= base_url(uri_string()) ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="<?= $setting['meta_desc'] . ' - ' . $title ?>">
-    <meta name="keywords" content="<?= $setting['meta_key'] ?>">
+    <meta name="keywords" content="pt sandemo indo teknologi, sandemo, sandemo it, sandemo indo teknologi, jasa pembuatan website, jasa website murah, website murah, website toko online, bikin website murah, jasa web palembang,  website palembang">
 
     <!-- Open Graph / Facebook -->
     <meta name="robots" content="index, follow">
