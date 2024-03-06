@@ -406,7 +406,7 @@
                                             <div class="blog-post mb-30">
                                                 <!-- <a href="blog-details.html"><img src="assets/img/blog/post-1.jpg" alt="Post Img"></a> -->
                                                 <div class="post-content">
-                                                    <h6 class="mb-10"><a href="<?= site_url('blog/' . $key['kategori'] . '/' . $key['slug']) ?>"><?= $key['title'] ?></a></h6>
+                                                    <h6 class="mb-10"><a href="<?= site_url('blog/' . $key['slug_kategori'] . '/' . $key['slug']) ?>"><?= $key['title'] ?></a></h6>
                                                     <span class="fs-14"><i class="fal fa-calendar-alt"></i> <?= date('d M Y', $key['date_created']) ?></span>
                                                 </div>
                                             </div>

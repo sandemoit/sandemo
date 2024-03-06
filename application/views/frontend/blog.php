@@ -25,7 +25,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blogs mb-30">
                             <div class="blogs__thumb mb-35">
-                                <a href="<?= site_url('blog/' . $key['kategori'] . '/' . $key['slug']) ?>">
+                                <a href="<?= site_url('blog/' . $key['slug_kategori'] . '/' . $key['slug']) ?>">
                                     <img src="<?= base_url('assets/frontend/img/blog/thumbnail/') . $key['gambar'] ?>" alt="Blog Img" class="blog-image">
                                 </a>
                             </div>
@@ -34,7 +34,7 @@
                                 <span><?= format_indo(date('Y-m-d', $key['date_created'])) ?> / By </span>
                                 <span class="author"><?= $key['author'] ?></span>
                             </div>
-                            <h5><a class="blog-title" href="<?= site_url('blog/' . $key['kategori'] . '/' . $key['slug']) ?>"><?= character_limiter($key['title'], 70) ?></a></h5>
+                            <h5><a class="blog-title" href="<?= site_url('blog/' . $key['slug_kategori'] . '/' . $key['slug']) ?>"><?= character_limiter($key['title'], 70) ?></a></h5>
                         </div>
                     </div>
                 <?php endforeach ?>

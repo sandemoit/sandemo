@@ -110,7 +110,7 @@ class Blog extends CI_Controller
     public function read($category, $slug)
     {
         $data['home'] = $this->Setting_model->get_setting();
-        $category_id = $this->db->where('kategori', $category)->get('kategori_blog')->row_array()['id'];
+        $category_id = $this->db->get_where('kategori_blog', ['slug' => $category])->row_array()['id'];
         $data['setting'] = $this->Setting_model->get_setting();
         $data['seo'] = $this->db
             ->where('id_kategori', $category_id)

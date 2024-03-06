@@ -54,7 +54,7 @@ class Page_model extends CI_Model
             $this->db->where('blog.id', $id);
         }
         $this->db->limit($limit, $start);
-        $this->db->select('blog.*, kategori_blog.kategori, kategori_blog.id as kat_id');
+        $this->db->select('blog.*, kategori_blog.kategori, kategori_blog.slug as slug_kategori, kategori_blog.id as kat_id');
         $this->db->join('kategori_blog', 'blog.id_kategori=kategori_blog.id');
         $this->db->order_by('blog.date_created', 'DESC');
         return $this->db->get('blog')->result_array();
@@ -66,7 +66,7 @@ class Page_model extends CI_Model
             $this->db->where('blog.id !=', $id);
         }
         $this->db->limit($limit, $start);
-        $this->db->select('blog.*, kategori_blog.kategori, kategori_blog.id as kat_id');
+        $this->db->select('blog.*, kategori_blog.kategori, kategori_blog.slug as slug_kategori, kategori_blog.id as kat_id');
         $this->db->join('kategori_blog', 'blog.id_kategori=kategori_blog.id');
         $this->db->order_by('blog.date_created', 'DESC');
         return $this->db->get('blog');
@@ -96,7 +96,7 @@ class Page_model extends CI_Model
 
     public function getBlogByKategori($id_kategori)
     {
-        $query = $this->db->select('blog.*, kategori_blog.kategori as kategori')
+        $query = $this->db->select('blog.*, kategori_blog.kategori as kategori, kategori_blog.slug as slug_kategori')
             ->from('blog')
             ->join('kategori_blog', 'kategori_blog.id = blog.id_kategori')
             ->where('blog.id_kategori', $id_kategori)

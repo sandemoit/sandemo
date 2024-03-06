@@ -25,7 +25,7 @@
                         <?php foreach ($postingan as $key) : ?>
                             <div class="blogs blog-4 mb-40">
                                 <div class="blog__thumb mb-55">
-                                    <a href="<?= site_url('blog/' . $key['kategori'] . '/' . $key['slug']) ?>">
+                                    <a href="<?= site_url('blog/' . $key['slug_kategori'] . '/' . $key['slug']) ?>">
                                         <img class="img-kategori" src="<?= base_url('assets/frontend/img/blog/thumbnail/') . $key['gambar'] ?>" alt="Blog Img">
                                     </a>
                                     <div class="tag"><?= $key['kategori'] ?></div>
@@ -34,7 +34,7 @@
                                     </div>
                                 </div>
                                 <div class="blog-content">
-                                    <h3><a class="blog-title" href="<?= site_url('blog/' . $key['kategori'] . '/' . $key['slug']) ?>"><?= character_limiter($key['title'], 70) ?></a></h3>
+                                    <h3><a class="blog-title" href="<?= site_url('blog/' . $key['slug_kategori'] . '/' . $key['slug']) ?>"><?= character_limiter($key['title'], 70) ?></a></h3>
                                     <p class="mb-20"><?= $key['meta'] ?></b></p>
                                     <div class="blogs__meta">
                                         <span><i class="fal fa-eye"></i> 100 Views</span>
