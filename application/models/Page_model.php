@@ -60,6 +60,11 @@ class Page_model extends CI_Model
         return $this->db->get('blog')->result_array();
     }
 
+    public function getBlogImage($id)
+    {
+        return $this->db->get_where('blog', ['id' => $id])->row_array();
+    }
+
     public function get_blog_recent($limit = null, $start = null, $id = null)
     {
         if ($id != null) {

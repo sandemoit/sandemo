@@ -197,11 +197,11 @@ class Page extends CI_Controller
         $where = array('id' => $id);
 
         // Get blog data to obtain the image filename
-        $blog = $this->Page_model->get_blog(null, null, $id)->result()[0];
+        $blog = $this->Page_model->getBlogImage($id);
 
         if ($blog) {
-            $imagePath = FCPATH . 'assets/frontend/img/blog/' . $blog->gambar;
-            $thumbnailPath = FCPATH . 'assets/frontend/img/blog/thumbnail/' . $blog->gambar;
+            $imagePath = FCPATH . 'assets/frontend/img/blog/' . $blog['gambar'];
+            $thumbnailPath = FCPATH . 'assets/frontend/img/blog/thumbnail/' . $blog['gambar'];
 
             // Delete image file
             if (file_exists($imagePath)) {
