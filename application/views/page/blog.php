@@ -30,7 +30,7 @@
                             <tr>
                                 <td><?= $no++; ?></a></td>
                                 <td><?= $b['author'] ?></td>
-                                <td><a target="_blank" href="<?= site_url('blog/' . $b['kategori'] . '/' . $b['slug']) ?>"><?= $b['title'] ?></a></td>
+                                <td><a target="_blank" href="<?= site_url('blog/' . $b['slug_kategori'] . '/' . $b['slug']) ?>"><?= $b['title'] ?></a></td>
                                 <td><?= date('Y-m-d H:i:s', $b['date_created']) ?></td>
                                 <td><?= $b['kategori'] ?></td>
                                 <td>

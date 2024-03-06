@@ -16,8 +16,8 @@ class Page extends CI_Controller
     {
         $data['title'] = 'Blog';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-
         $data['blog'] = $this->Page_model->get_blog();
+
         $this->load->view('template_auth/header', $data);
         $this->load->view('template_auth/topbar', $data);
         $this->load->view('template_auth/sidebar', $data);
@@ -135,8 +135,9 @@ class Page extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
         $data['kategori'] = $this->Page_model->get_kategori($id)->result_array();
-        $data['blog'] = $this->Page_model->get_blog($limit = 1, $start = null, $id)->result()[0];
+        $data['blog'] = $this->Page_model->get_blog($id)->result()[0];
         $data['id'] = $id;
+
         $this->load->view('template_auth/header', $data);
         $this->load->view('template_auth/topbar', $data);
         $this->load->view('template_auth/sidebar', $data);
