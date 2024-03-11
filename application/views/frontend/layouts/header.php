@@ -198,9 +198,9 @@
                                                     <a class="nav-link" href="<?= site_url('portfolio') ?>">Portfolio</a>
                                                 </li>
 
-                                                <li class="nav-item">
+                                                <!-- <li class="nav-item">
                                                     <a class="nav-link" href="<?= site_url('karir') ?>">Karir</a>
-                                                </li>
+                                                </li> -->
 
                                                 <li class="nav-item">
                                                     <a class="nav-link" href="<?= site_url('team') ?>">Team</a>
