@@ -17,7 +17,7 @@
                                     </h1>
                                     <p><?= $setting['about_hf'] ?></p>
                                     <ul class="btn-list d-md-flex align-items-center mt-25">
-                                        <li><a class="theme_btn mr-30" href="tel:<?= $setting['nohp'] ?>"><i class="fas fa-phone-alt mr-10"></i> Hubungi Kami</a></li>
+                                        <li><a class="theme_btn mr-30" href="<?= site_url('web-development') ?>"><i class="fas fa-crown mr-10"></i> Layanan Kami</a></li>
                                         <li><a target="_blank" class="theme_btn border_btn" href="https://wa.me/<?= $setting['nohp'] ?>?text=Halo%20admin,%20bisa%20bantu%20untuk%20menjelaskan%20terkait%20layanan."><i class="fab fa-whatsapp mr-10"></i> Chat WhatsApp</a></li>
                                     </ul>
                                 </div>
