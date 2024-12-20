@@ -6,19 +6,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <?php
-    if ($this->uri->segment(1) == '') {
-        echo '<title>' . $title . ' - ' . $setting['slogan_website'] . '</title>';
-    } else {
-        echo '<title>' . $title . ' - ' . $setting['judul_website'] . '</title>';
-    }
-    ?>
+    $isHomePage = ($this->uri->segment(1) == '');
+    $pageTitle = $title . ' - ' . ($isHomePage ? $setting['slogan_website'] : $setting['judul_website']);
 
-    <?php
-    if ($this->uri->segment(1) == '') {
-        echo '<meta name="title" content="Jasa Pembuatan Website - ' . $setting['slogan_website'] . '" />';
-    } else {
-        echo '<meta name="title" content="' . $title . ' - ' . $setting['judul_website'] . '" />';
-    }
+    echo '<title>' . $pageTitle . '</title>';
+    echo '<meta name="title" content="' . ($isHomePage ? 'Jasa Pembuatan Website - ' . $setting['slogan_website'] : $pageTitle) . '" />';
     ?>
 
     <link rel="canonical" href="<?= base_url(uri_string()) ?>" />

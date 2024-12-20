@@ -19,7 +19,6 @@
                     <h6 class="widget-title text-white pb-20 mb-35">Halaman</h6>
                     <ul class="fot-list">
                         <li><a href="https://shopee.co.id/sandemo.id">Shopee</a></li>
-                        <li><a href="https://members.phpmu.com/sandi">PHPMu</a></li>
                         <li><a href="https://www.fiverr.com/sandemoit">Fiverr</a></li>
                         <li><a href="https://www.freelancer.co.id/u/sandimaulidika">Freelancer ID</a></li>
                         <li><a href="https://fastwork.id/user/sandemo">Fastwork</a></li>
